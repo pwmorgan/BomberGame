@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ExplosionController : MonoBehaviour {
 	
+	public int explosionForce;
 	public int explosionRate;
 	public int maxScale;
 	
@@ -28,8 +29,8 @@ public class ExplosionController : MonoBehaviour {
 		if (collider.gameObject.tag == "Enemy") {
 			EnemyController enemy = collider.gameObject.GetComponent(typeof(EnemyController)) as EnemyController;
 			
-			if (enemy.Alive) {		
-				enemy.Kill();
+			if (enemy.Alive) {
+				enemy.Kill(transform.position, explosionForce);
 			}
 		}
 	}

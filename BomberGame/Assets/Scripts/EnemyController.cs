@@ -18,13 +18,15 @@ public class EnemyController : MonoBehaviour {
 	}
 	
 	// Kill the enemy
-	public void Kill() {
+	public void Kill(Vector3 explosion, int explosionForce) {
 		Debug.Log( "Killed Enemy" );
 		
 		Alive = false;
 		
-		//rigidbody.AddForce();
+		Vector3 distance = explosionForce * (transform.position - explosion) ;
 		
-		GameObject.Destroy( gameObject );
+		rigidbody.AddForce(distance);
+		
+		//GameObject.Destroy( gameObject );
 	}
 }

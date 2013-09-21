@@ -93,7 +93,7 @@ public class GameStateController : MonoBehaviour {
 			
 			// for now, kill the enemy
 			// TODO: logic for whether or not kill the enemy 
-			ECScript.Kill();
+			//ECScript.Kill();
 		}
 		
 	}
