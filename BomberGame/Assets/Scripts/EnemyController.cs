@@ -23,6 +23,8 @@ public class EnemyController : MonoBehaviour {
 		
 		Alive = false;
 		
+		//rigidbody.AddForce();
+		
 		GameObject.Destroy( gameObject );
 	}
 }
