@@ -22,4 +22,15 @@ public class ExplosionController : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+	
+	void OnTriggerEnter(Collider collider) {
+		Debug.Log("Collision!");
+		if (collider.gameObject.tag == "Enemy") {
+			EnemyController enemy = collider.gameObject.GetComponent(typeof(EnemyController)) as EnemyController;
+			
+			if (enemy.Alive) {		
+				enemy.Kill();
+			}
+		}
+	}
 }
