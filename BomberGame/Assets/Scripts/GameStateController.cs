@@ -3,22 +3,39 @@ using System.Collections;
 
 public class GameStateController : MonoBehaviour {
 	
-	//
+	// inspector properties
 	public string[] EnemyTags = new string[1];
+	public int LevelDuration = 30;
+	public GUIStyle RemainingTimeGUIStyle = new GUIStyle();
 	
 	// Enemies game object array
 	private GameObject[] Enemies = new GameObject[0];
 	
-	// Time tracking
+	// Slow Motion Time tracking
 	private float SlowTimeStart;
 	private float SlowTimeDuration;
 	private float SlowTimeElapsed = 0.0f;
 	private bool IsTimeSlowed = false;
 	
+	// Level Duration tracking
+	private float LevelStartTime;
+	private float RemainingTime;
+	private Rect RemainingTimeRect;
+	private float RemainingTimeWidth = 100.0f;
+	private float RemainingTimeHeight = 50.0f;
+	private string DisplayTime;
+	
 	
 	// Use this for initialization
 	void Start () {
 		Debug.Log( "GameStateController Initialized-------" );
+		
+		// setup GUI rect's
+		RemainingTimeRect = new Rect( Screen.width / 2 - (RemainingTimeWidth/2), 0, RemainingTimeWidth, RemainingTimeHeight ); 
+		
+		// assign remaining time
+		RemainingTime = LevelDuration;
+		LevelStartTime = Time.time;
 		
 	}
 	
@@ -42,6 +59,23 @@ public class GameStateController : MonoBehaviour {
 			}
 		}
 		
+		// update remaining time
+		if (RemainingTime >= 0) {
+			RemainingTime = LevelDuration - ( Time.time - LevelStartTime );
+			DisplayTime = "" + Mathf.Round(RemainingTime);
+		} else {
+			// end the level
+			TimeExpired();
+		}
+		
+	}
+	
+	
+	// draw gui
+	void OnGUI() {
+		
+		// draw remaining time
+		GUI.Label( RemainingTimeRect, DisplayTime, RemainingTimeGUIStyle );
 	}
 	
 	// Method: CheckEnemies, sees who is alive or dead in the scene
@@ -49,7 +83,8 @@ public class GameStateController : MonoBehaviour {
 		Debug.Log( "CheckEnemies" );
 		
 		// identify enemies
-		Enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		// TODO: loop through enemy tags array for applicable objects
+		Enemies = GameObject.FindGameObjectsWithTag( EnemyTags[0] );
 		Debug.Log( "Total Enemies: " + Enemies.Length );
 		
 		// kill applicable enemies
@@ -88,5 +123,10 @@ public class GameStateController : MonoBehaviour {
 		
 		// Tracking
 		IsTimeSlowed = false;
+	}
+	
+	// Method: TimeExpired, ends the level if time runs out
+	private void TimeExpired() {
+		Debug.Log( "TimeExpired: Game Over");
 	}
 }
