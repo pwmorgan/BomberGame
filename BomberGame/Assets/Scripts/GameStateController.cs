@@ -6,7 +6,9 @@ public class GameStateController : MonoBehaviour {
 	// inspector properties
 	public string[] EnemyTags = new string[1];
 	public int LevelDuration = 30;
+	public string NextLevelName = "MainMenu";
 	public GUIStyle RemainingTimeGUIStyle = new GUIStyle();
+	public GUIStyle EndSequenceGUIStyle = new GUIStyle();
 	
 	// Enemies game object array
 	private GameObject[] Enemies = new GameObject[0];
@@ -25,6 +27,14 @@ public class GameStateController : MonoBehaviour {
 	private float RemainingTimeHeight = 50.0f;
 	private string DisplayTime;
 	
+	// End of Level tracking
+	private bool IsLevelActive = true;
+	private Rect EndSequenceRect;
+	private float EndSequenceWidth = 600.0f;
+	private float EndSequenceHeight = 300.0f;
+	private float EndSequenceSpacer = 10.0f;
+	private float EndSequenceButtonHeight = 25.0f;
+	
 	
 	// Use this for initialization
 	void Start () {
@@ -32,6 +42,7 @@ public class GameStateController : MonoBehaviour {
 		
 		// setup GUI rect's
 		RemainingTimeRect = new Rect( Screen.width / 2 - (RemainingTimeWidth/2), 0, RemainingTimeWidth, RemainingTimeHeight ); 
+		EndSequenceRect = new Rect( Screen.width / 2 - (EndSequenceWidth/2), Screen.height/2 - (EndSequenceHeight/2), EndSequenceWidth, EndSequenceHeight );
 		
 		// assign remaining time
 		RemainingTime = LevelDuration;
@@ -74,8 +85,28 @@ public class GameStateController : MonoBehaviour {
 	// draw gui
 	void OnGUI() {
 		
-		// draw remaining time
-		GUI.Label( RemainingTimeRect, DisplayTime, RemainingTimeGUIStyle );
+		if ( IsLevelActive ) {
+		
+			// draw remaining time
+			GUI.Label( RemainingTimeRect, DisplayTime, RemainingTimeGUIStyle );
+			
+		} else {
+			GUI.BeginGroup( EndSequenceRect );
+				GUI.Label( new Rect( 0, 0, EndSequenceWidth, EndSequenceButtonHeight ), "LEVEL COMPLETE", EndSequenceGUIStyle );
+			
+				if (GUI.Button( new Rect( 0, EndSequenceButtonHeight + EndSequenceSpacer, EndSequenceWidth, 25 ), "REPLAY" ) ) {
+					RestartLevel();
+				}
+				if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "NEXT LEVEL" ) ) {
+					NextLevel();
+				}
+				if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 3, EndSequenceWidth, 25 ), "QUIT GAME" ) ) {
+					QuitToMenu();
+				}
+			GUI.EndGroup();
+			
+		}
+		
 	}
 	
 	// Method: CheckEnemies, sees who is alive or dead in the scene
@@ -87,13 +118,9 @@ public class GameStateController : MonoBehaviour {
 		Enemies = GameObject.FindGameObjectsWithTag( EnemyTags[0] );
 		Debug.Log( "Total Enemies: " + Enemies.Length );
 		
-		// kill applicable enemies
+		// see if enemy is dead
 		foreach (GameObject enemy in Enemies) {
 			EnemyController ECScript = enemy.GetComponent<EnemyController>();
-			
-			// for now, kill the enemy
-			// TODO: logic for whether or not kill the enemy 
-			//ECScript.Kill();
 		}
 		
 	}
@@ -125,8 +152,38 @@ public class GameStateController : MonoBehaviour {
 		IsTimeSlowed = false;
 	}
 	
-	// Method: TimeExpired, ends the level if time runs out
+	// Method: TimeExpired, fired when timer reaches 0
 	private void TimeExpired() {
-		Debug.Log( "TimeExpired: Game Over");
+		Debug.Log( "TimeExpired");
+		
+		IsLevelActive = false;
+	}
+	
+	// Method: EndLevel, ends the level and provides the user options
+	private void EndLevel() {
+		Debug.Log( "EndLevel" );
+		
+		IsLevelActive = false;
+	}
+	
+	// Method: NextLevel, load the next level
+	private void NextLevel() {
+		Debug.Log( "NextLevel" );
+		
+		Application.LoadLevel( "MainMenu" );
+	}
+	
+	// Method: RestartLevel, reloads the current level
+	private void RestartLevel() {
+		Debug.Log( "RestartLevel" );
+		
+		Application.LoadLevel( Application.loadedLevel );
+	}
+	
+	// Method: QuitToMenu, quits the level and takes the user to the main menu scene
+	private void QuitToMenu() {
+		Debug.Log( "QuitToMenu" );	
+		
+		Application.LoadLevel( "MainMenu" );
 	}
 }
