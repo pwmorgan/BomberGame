@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  explosion: {fileID: 0}
 --- !u!1 &513466474
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +357,7 @@ MonoBehaviour:
   EnemyTags:
   - Enemy
   LevelDuration: 5
+  NextLevelName: 
   RemainingTimeGUIStyle:
     m_Name: 
     m_Normal:

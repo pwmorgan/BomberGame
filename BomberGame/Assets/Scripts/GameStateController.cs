@@ -6,6 +6,7 @@ public class GameStateController : MonoBehaviour {
 	// inspector properties
 	public string[] EnemyTags = new string[1];
 	public int LevelDuration = 30;
+	public string NextLevelName = "";
 	public GUIStyle RemainingTimeGUIStyle = new GUIStyle();
 	public GUIStyle EndSequenceGUIStyle = new GUIStyle();
 	
@@ -32,6 +33,7 @@ public class GameStateController : MonoBehaviour {
 	private float EndSequenceWidth = 600.0f;
 	private float EndSequenceHeight = 300.0f;
 	private float EndSequenceSpacer = 10.0f;
+	private float EndSequenceButtonHeight = 25.0f;
 	
 	
 	// Use this for initialization
@@ -90,7 +92,17 @@ public class GameStateController : MonoBehaviour {
 			
 		} else {
 			GUI.BeginGroup( EndSequenceRect );
-				GUI.Label( new Rect( 0, 0, EndSequenceWidth, 25 ), "LEVEL COMPLETE", EndSequenceGUIStyle );
+				GUI.Label( new Rect( 0, 0, EndSequenceWidth, EndSequenceButtonHeight ), "LEVEL COMPLETE", EndSequenceGUIStyle );
+			
+				if (GUI.Button( new Rect( 0, EndSequenceButtonHeight + EndSequenceSpacer, EndSequenceWidth, 25 ), "REPLAY" ) ) {
+					RestartLevel();
+				}
+				if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "NEXT LEVEL" ) ) {
+					NextLevel();
+				}
+				if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 3, EndSequenceWidth, 25 ), "QUIT GAME" ) ) {
+					QuitToMenu();
+				}
 			GUI.EndGroup();
 			
 		}
@@ -163,5 +175,10 @@ public class GameStateController : MonoBehaviour {
 	// Method: RestartLevel, reloads the current level
 	private void RestartLevel() {
 		Debug.Log( "RestartLevel" );
+	}
+	
+	// Method: QuitToMenu, quits the level and takes the user to the main menu scene
+	private void QuitToMenu() {
+		Debug.Log( "QuitToMenu" );	
 	}
 }
