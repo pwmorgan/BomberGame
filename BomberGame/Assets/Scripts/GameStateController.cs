@@ -6,7 +6,7 @@ public class GameStateController : MonoBehaviour {
 	// inspector properties
 	public string[] EnemyTags = new string[1];
 	public int LevelDuration = 30;
-	public string NextLevelName = "";
+	public string NextLevelName = "MainMenu";
 	public GUIStyle RemainingTimeGUIStyle = new GUIStyle();
 	public GUIStyle EndSequenceGUIStyle = new GUIStyle();
 	
@@ -170,15 +170,21 @@ public class GameStateController : MonoBehaviour {
 	// Method: NextLevel, load the next level
 	private void NextLevel() {
 		Debug.Log( "NextLevel" );
+		
+		Application.LoadLevel( "MainMenu" );
 	}
 	
 	// Method: RestartLevel, reloads the current level
 	private void RestartLevel() {
 		Debug.Log( "RestartLevel" );
+		
+		Application.LoadLevel( Application.loadedLevel );
 	}
 	
 	// Method: QuitToMenu, quits the level and takes the user to the main menu scene
 	private void QuitToMenu() {
 		Debug.Log( "QuitToMenu" );	
+		
+		Application.LoadLevel( "MainMenu" );
 	}
 }
