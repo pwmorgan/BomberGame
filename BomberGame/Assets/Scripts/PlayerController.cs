@@ -6,10 +6,11 @@ public class PlayerController : MonoBehaviour {
 	public int speed;
 	
 	private Vector3 _velocity;
+	private CharacterController _controller;
 	
 	// Use this for initialization
 	void Start () {
-	
+		_controller = GetComponent<CharacterController>();
 	}
 	
 	// Update is called once per frame
@@ -19,9 +20,6 @@ public class PlayerController : MonoBehaviour {
 		float xVel = Input.GetAxis("Horizontal");
 		float yVel = Input.GetAxis("Vertical");
 		
-		float xPercent;
-		float yPercent;
-		
 		// Horizontal Movement
 		_velocity.x = xVel * speed * Time.fixedDeltaTime;
 		
@@ -29,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 		_velocity.z = yVel * speed * Time.fixedDeltaTime;
 		
 		// Update position
-		transform.Translate(_velocity);
+		_controller.Move(_velocity);
 		
 		// Space Bar Explodes
 			// Tell Game manager an explosion is starting.
