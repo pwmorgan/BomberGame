@@ -164,6 +164,7 @@ GameObject:
   - 33: {fileID: 502550038}
   - 65: {fileID: 502550037}
   - 23: {fileID: 502550036}
+  - 114: {fileID: 502550040}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -219,6 +220,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &502550040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 502550035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346c8c41feaf6418093674787281b4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
 --- !u!1 &513466474
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +243,7 @@ GameObject:
   - 33: {fileID: 513466477}
   - 65: {fileID: 513466476}
   - 23: {fileID: 513466475}
+  - 114: {fileID: 513466479}
   m_Layer: 0
   m_Name: EnemyFPO
   m_TagString: Enemy
@@ -288,6 +302,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &513466479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 284be2114f4e7454e98b2901e59f057b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2087849274}
+  m_GameObject: {fileID: 513466474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07b0675afd1a4869865db622b69f75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Alive: 1
 --- !u!1 &683511233
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +473,7 @@ GameObject:
   - 33: {fileID: 1429908204}
   - 65: {fileID: 1429908203}
   - 23: {fileID: 1429908202}
+  - 114: {fileID: 1429908206}
   m_Layer: 0
   m_Name: EnemyFPO
   m_TagString: Enemy
@@ -504,6 +532,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1429908206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 284be2114f4e7454e98b2901e59f057b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1144589969}
+  m_GameObject: {fileID: 1429908201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07b0675afd1a4869865db622b69f75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Alive: 1
 --- !u!1 &1509653337
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +556,7 @@ GameObject:
   - 33: {fileID: 1509653340}
   - 65: {fileID: 1509653339}
   - 23: {fileID: 1509653338}
+  - 114: {fileID: 1509653342}
   m_Layer: 0
   m_Name: EnemyFPO
   m_TagString: Enemy
@@ -573,6 +615,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1509653342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 284be2114f4e7454e98b2901e59f057b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2023220794}
+  m_GameObject: {fileID: 1509653337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07b0675afd1a4869865db622b69f75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Alive: 1
 --- !u!1 &1657857615
 GameObject:
   m_ObjectHideFlags: 0
