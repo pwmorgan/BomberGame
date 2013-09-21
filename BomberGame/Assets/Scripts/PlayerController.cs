@@ -15,15 +15,18 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	
 	void Update () {
-		// Horizontal Movement
+		// Get input
 		float xVel = Input.GetAxis("Horizontal");
 		float yVel = Input.GetAxis("Vertical");
 		
+		float xPercent;
+		float yPercent;
+		
+		// Horizontal Movement
 		_velocity.x = xVel * speed * Time.fixedDeltaTime;
 		
 		// Vertical Movement
 		_velocity.z = yVel * speed * Time.fixedDeltaTime;
-		
 		
 		// Update position
 		transform.Translate(_velocity);
