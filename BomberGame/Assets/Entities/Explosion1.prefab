@@ -66,8 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbdcb1b3f27e46afbc97d2e717bbcb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRate: 100
-  maxScale: 25
+  explosionRate: 75
+  maxScale: 20
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
