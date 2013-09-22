@@ -30,8 +30,9 @@ public class GameStateController : MonoBehaviour {
 	private float LevelStartTime;
 	private float RemainingTime;
 	private Rect RemainingTimeRect;
-	private float RemainingTimeWidth = 100.0f;
-	private float RemainingTimeHeight = 50.0f;
+	private Rect MinKillsRect;
+	private float RemainingTimeWidth = 300.0f;
+	private float RemainingTimeHeight = 25.0f;
 	private string DisplayTime;
 	private bool IsRemainingTimeDisplayed = true;
 	
@@ -52,7 +53,9 @@ public class GameStateController : MonoBehaviour {
 		Debug.Log( "GameStateController Initialized-------" );
 		
 		// setup GUI rect's
-		RemainingTimeRect = new Rect( Screen.width / 2 - (RemainingTimeWidth/2), 0, RemainingTimeWidth, RemainingTimeHeight ); 
+		
+		MinKillsRect = new Rect( Screen.width/2 - (RemainingTimeWidth/2), 10, RemainingTimeWidth, RemainingTimeHeight );
+		RemainingTimeRect = new Rect( Screen.width/2 - (RemainingTimeWidth/2), 12+RemainingTimeHeight, RemainingTimeWidth, RemainingTimeHeight ); 
 		EndSequenceRect = new Rect( Screen.width / 2 - (EndSequenceWidth/2), Screen.height/2 - (EndSequenceHeight/2), EndSequenceWidth, EndSequenceHeight );
 		
 		// assign remaining time
@@ -92,7 +95,7 @@ public class GameStateController : MonoBehaviour {
 		if (IsRemainingTimeDisplayed) {
 			if (RemainingTime >= 0) {
 				RemainingTime = LevelDuration - ( Time.time - LevelStartTime );
-				DisplayTime = "" + Mathf.Round(RemainingTime);
+				DisplayTime = "TIME: " + Mathf.Round(RemainingTime);
 			} else {
 				if (IsLevelActive) {
 					// end the level
@@ -107,9 +110,13 @@ public class GameStateController : MonoBehaviour {
 	void OnGUI() {
 		
 		if ( IsRemainingTimeDisplayed ) {
-		
+			
 			// draw remaining time
+			//GUI.Box( RemainingTimeRect, "TEST", FloatingBoxGUIStyle );
 			GUI.Label( RemainingTimeRect, DisplayTime, RemainingTimeGUIStyle );
+			
+			// draw kills threshold
+			GUI.Label( MinKillsRect, "KILLS NEEDED: " + KillsRequired, RemainingTimeGUIStyle );
 			
 		}
 		
@@ -118,8 +125,8 @@ public class GameStateController : MonoBehaviour {
 			// LEVEL PASSED
 			if (TotalKills >= KillsRequired ) {
 				GUI.BeginGroup( EndSequenceRect );
-					GUI.Label( new Rect( 0, 0, EndSequenceWidth, EndSequenceButtonHeight ), "LEVEL PASSED", EndSequenceGUIStyle );
-					GUI.Label( new Rect( 0, EndSequenceButtonHeight, EndSequenceWidth, EndSequenceButtonHeight ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL PASSED", EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
 				
 					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
 						RestartLevel();
@@ -135,8 +142,8 @@ public class GameStateController : MonoBehaviour {
 			// LEVEL FAILED
 			} else {
 				GUI.BeginGroup( EndSequenceRect );
-					GUI.Label( new Rect( 0, 0, EndSequenceWidth, EndSequenceButtonHeight ), "LEVEL FAILED", EndSequenceGUIStyle );
-					GUI.Label( new Rect( 0, EndSequenceButtonHeight, EndSequenceWidth, EndSequenceButtonHeight ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL FAILED", EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
 				
 					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
 						RestartLevel();
@@ -151,6 +158,7 @@ public class GameStateController : MonoBehaviour {
 		
 	}
 	
+	// Method: CancelLevelTimer, removes the timer from the level
 	public void CancelLevelTimer() {
 		Debug.Log( "CancelLevelTimer" );
 		
@@ -256,9 +264,13 @@ public class GameStateController : MonoBehaviour {
 	private void TimeExpired() {
 		Debug.Log( "TimeExpired");
 		
-		CheckEnemies();
+		//IsLevelActive = false;
 		
-		IsLevelActive = false;
+		// Explode the player
+		GameObject Player = GameObject.FindGameObjectWithTag( "Player" );
+		PlayerController PCScript = Player.GetComponent<PlayerController>();
+		PCScript.Explode();
+		
 	}
 	
 	// Method: EndLevel, ends the level and provides the user options

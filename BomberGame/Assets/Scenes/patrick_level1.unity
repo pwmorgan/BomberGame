@@ -450,6 +450,7 @@ MonoBehaviour:
   speed: 13
   explosion: {fileID: 400000, guid: d9ced618a530c449396041ba0c9f938e, type: 2}
   animatedPlane: {fileID: 1901772054}
+  ScorchMark: {fileID: 100000, guid: 1b1417bc457a444c5968fcb7e8c07666, type: 2}
 --- !u!1 &576913499
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,11 +485,12 @@ MonoBehaviour:
   LevelDuration: 15
   KillsRequired: 6
   NextLevelName: patrick_level2
+  ScorchMark: {fileID: 100000, guid: 1b1417bc457a444c5968fcb7e8c07666, type: 2}
   RemainingTimeGUIStyle:
     m_Name: 
     m_Normal:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_Background: {fileID: 2800000, guid: c9f68864f0adf4a76b3f9c4f7fb3bf2a, type: 3}
+      m_TextColor: {r: .852941155, g: .852941155, b: .852941155, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -531,9 +533,9 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 0}
-    m_FontSize: 0
+    m_FontSize: 16
     m_FontStyle: 0
-    m_Alignment: 1
+    m_Alignment: 4
     m_WordWrap: 0
     m_RichText: 1
     m_TextClipping: 0
@@ -546,8 +548,8 @@ MonoBehaviour:
   EndSequenceGUIStyle:
     m_Name: 
     m_Normal:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_Background: {fileID: 2800000, guid: c9f68864f0adf4a76b3f9c4f7fb3bf2a, type: 3}
+      m_TextColor: {r: .91911763, g: .91911763, b: .91911763, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -590,9 +592,9 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 0}
-    m_FontSize: 0
+    m_FontSize: 21
     m_FontStyle: 0
-    m_Alignment: 1
+    m_Alignment: 4
     m_WordWrap: 1
     m_RichText: 1
     m_TextClipping: 0
