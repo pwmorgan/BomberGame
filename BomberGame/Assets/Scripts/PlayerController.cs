@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour {
 					_gameController.CancelLevelTimer();
 					Explode();
 					
+					
 				}
 			
 				break;

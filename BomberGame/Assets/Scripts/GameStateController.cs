@@ -254,6 +254,8 @@ public class GameStateController : MonoBehaviour {
 		
 		// scorch mark
 		GameObject Player = GameObject.FindGameObjectWithTag( "Player" );
+		Player.audio.Play();
+		
 		PlayerDeathTransform = Player.transform;
 		Instantiate(ScorchMark, PlayerDeathTransform.position, transform.rotation);
 
