@@ -43,6 +43,9 @@ public class GameStateController : MonoBehaviour {
 	private float EndSequenceHeight = 300.0f;
 	private float EndSequenceSpacer = 10.0f;
 	private float EndSequenceButtonHeight = 25.0f;
+	private float EndSequenceDelay = 2.0f;
+	private float EndSequencePauseDuration = 0.0f;
+	private float EndSequenceStartTime;
 	
 	// Score tracking
 	private int TotalKills = 0;
@@ -121,37 +124,39 @@ public class GameStateController : MonoBehaviour {
 		}
 		
 		if (!IsLevelActive) {
-			
-			// LEVEL PASSED
-			if (TotalKills >= KillsRequired ) {
-				GUI.BeginGroup( EndSequenceRect );
-					GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL PASSED!", EndSequenceGUIStyle );
-					GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "KILLS: " + TotalKills, EndSequenceGUIStyle );
-				
-					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
-						RestartLevel();
-					}
-					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 3, EndSequenceWidth, 25 ), "NEXT LEVEL" ) ) {
-						NextLevel();
-					}
-					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 4, EndSequenceWidth, 25 ), "QUIT GAME" ) ) {
-						QuitToMenu();
-					}
-				GUI.EndGroup();
-				
-			// LEVEL FAILED
-			} else {
-				GUI.BeginGroup( EndSequenceRect );
-					GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL FAILED!", EndSequenceGUIStyle );
-					GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "KILLS: " + TotalKills, EndSequenceGUIStyle );
-				
-					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
-						RestartLevel();
-					}
-					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 3, EndSequenceWidth, 25 ), "QUIT GAME" ) ) {
-						QuitToMenu();
-					}
-				GUI.EndGroup();
+			EndSequencePauseDuration = Time.time - EndSequenceStartTime;
+			if (EndSequencePauseDuration >= EndSequenceDelay ) {
+				// LEVEL PASSED
+				if (TotalKills >= KillsRequired ) {
+					GUI.BeginGroup( EndSequenceRect );
+						GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL PASSED!", EndSequenceGUIStyle );
+						GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "KILLS: " + TotalKills, EndSequenceGUIStyle );
+					
+						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
+							RestartLevel();
+						}
+						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 3, EndSequenceWidth, 25 ), "NEXT LEVEL" ) ) {
+							NextLevel();
+						}
+						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 4, EndSequenceWidth, 25 ), "QUIT GAME" ) ) {
+							QuitToMenu();
+						}
+					GUI.EndGroup();
+					
+				// LEVEL FAILED
+				} else {
+					GUI.BeginGroup( EndSequenceRect );
+						GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL FAILED!", EndSequenceGUIStyle );
+						GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "KILLS: " + TotalKills, EndSequenceGUIStyle );
+					
+						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
+							RestartLevel();
+						}
+						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 3, EndSequenceWidth, 25 ), "QUIT GAME" ) ) {
+							QuitToMenu();
+						}
+					GUI.EndGroup();
+				}
 			}
 			
 		}
@@ -184,6 +189,9 @@ public class GameStateController : MonoBehaviour {
 		}
 		Debug.Log( "Total Kills: " + TotalKills );
 		
+		// end sequence
+		EndSequenceStartTime = Time.time;
+		
 	}
 	
 	// Method: CheckExplosions, see is the explosions are finished
@@ -206,7 +214,7 @@ public class GameStateController : MonoBehaviour {
 		}
 		
 		if (ExplosionsAlive == 0) {
-			IsLevelActive = false;	
+			IsLevelActive = false;
 			CheckEnemies();
 		}
 		
