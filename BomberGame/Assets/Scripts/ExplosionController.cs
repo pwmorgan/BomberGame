@@ -6,12 +6,18 @@ public class ExplosionController : MonoBehaviour {
 	public int explosionForce;
 	public int explosionRate;
 	public int maxScale;
+	public float timeSlowDuration;
+	public float timeSlowRate;
 	
 	private float _scale = 1;
 	
 	// Use this for initialization
 	void Start () {
-	
+		GameObject gameControllerObj = GameObject.FindGameObjectsWithTag( "GameController" )[0];
+		GameStateController gameController = gameControllerObj.GetComponent(typeof(GameStateController)) as GameStateController;
+		gameController.SlowTime(timeSlowDuration, timeSlowRate);
+		CameraController camera = gameController.LevelCamera.GetComponent(typeof(CameraController)) as CameraController;
+		camera.Shake();
 	}
 	
 	// Update is called once per frame

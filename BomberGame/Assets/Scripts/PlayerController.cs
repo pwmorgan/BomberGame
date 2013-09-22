@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 				if (Input.GetButtonDown("Detonate")) {
 					// Create an explosion at player location.
 		            Instantiate(explosion, transform.position, transform.rotation);
-					_gameController.SlowTime(0.2f, 0.2f);
+					//_gameController.
 					_state = State.DEAD;
 				}
 			

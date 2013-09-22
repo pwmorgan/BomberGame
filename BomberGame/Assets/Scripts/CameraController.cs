@@ -5,7 +5,7 @@ public class CameraController : MonoBehaviour {
 	
 	// Inspector variables
 	public float ShakeIntensity = 1.0f;
-	public float ShakeDuration = 2.0f;
+	public float ShakeDuration = 0f;
 	
 	//
 	private Transform OriginalTransform;
@@ -24,12 +24,12 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	public void Shake() {
+		OriginalTransform = gameObject.transform;
 		iTween.ShakePosition( gameObject, iTween.Hash ( "x", ShakeIntensity * 0.1f, "z", ShakeIntensity * 0.1f, "y", 0, "duration", ShakeDuration, "oncomplete", "OnShakeComplete", "oncompletetarget", gameObject) );
 	}
 	
 	private void OnShakeComplete( ) {
 		Debug.Log( "OnShakeComplete" );
-		
 		gameObject.transform.position = new Vector3( OriginalTransform.position.x, OriginalTransform.position.y, OriginalTransform.position.z );
 	}
 			
