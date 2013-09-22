@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 	public int speed;
 	public Transform explosion;
 	public Transform animatedPlane;
+	public GameObject ScorchMark;
 	
 	private enum State {
 		ALIVE,
@@ -85,14 +86,18 @@ public class PlayerController : MonoBehaviour {
 				if (Input.GetButtonDown("Detonate")) {
 					// Create an explosion at player location.
 		            Instantiate(explosion, transform.position, transform.rotation);
+					
 					//_gameController.
+					
 					_state = State.DEAD;
+					Destroy( animatedPlane.gameObject );
+					
 				}
 			
 				break;
 			
 			case State.DEAD:
-			
+				
 				break;
 			
 			default:
