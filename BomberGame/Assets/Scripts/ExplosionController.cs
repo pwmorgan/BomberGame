@@ -20,7 +20,7 @@ public class ExplosionController : MonoBehaviour {
 		_gameController = gameControllerObj.GetComponent(typeof(GameStateController)) as GameStateController;
 		_gameController.SlowTime(timeSlowDuration, timeSlowRate);
 		CameraController camera = _gameController.LevelCamera.GetComponent(typeof(CameraController)) as CameraController;
-		camera.Shake();
+		//camera.Shake();
 	}
 	
 	// Update is called once per frame

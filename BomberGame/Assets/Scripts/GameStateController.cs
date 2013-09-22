@@ -231,6 +231,10 @@ public class GameStateController : MonoBehaviour {
 		
 		// Tracking
 		IsTimeSlowed = false;
+		
+		// camera shake
+		CameraController CCScript = LevelCamera.GetComponent<CameraController>();
+		CCScript.Shake();
 	}
 	
 	// Method: TimeExpired, fired when timer reaches 0
