@@ -11,7 +11,6 @@ public class GameStateController : MonoBehaviour {
 	public string NextLevelName = "MainMenu";
 	public GameObject ScorchMark;
 	public GUIStyle RemainingTimeGUIStyle = new GUIStyle();
-	public GUIStyle FloatingBoxGUIStyle = new GUIStyle();
 	public GUIStyle EndSequenceGUIStyle = new GUIStyle();
 	
 	// Entitiies game object arrays
@@ -96,7 +95,7 @@ public class GameStateController : MonoBehaviour {
 		if (IsRemainingTimeDisplayed) {
 			if (RemainingTime >= 0) {
 				RemainingTime = LevelDuration - ( Time.time - LevelStartTime );
-				DisplayTime = "TIME:" + Mathf.Round(RemainingTime);
+				DisplayTime = "TIME: " + Mathf.Round(RemainingTime);
 			} else {
 				if (IsLevelActive) {
 					// end the level
@@ -126,8 +125,8 @@ public class GameStateController : MonoBehaviour {
 			// LEVEL PASSED
 			if (TotalKills >= KillsRequired ) {
 				GUI.BeginGroup( EndSequenceRect );
-					GUI.Label( new Rect( 0, 0, EndSequenceWidth, EndSequenceButtonHeight ), "LEVEL PASSED", EndSequenceGUIStyle );
-					GUI.Label( new Rect( 0, EndSequenceButtonHeight, EndSequenceWidth, EndSequenceButtonHeight ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL PASSED", EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
 				
 					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
 						RestartLevel();
@@ -143,8 +142,8 @@ public class GameStateController : MonoBehaviour {
 			// LEVEL FAILED
 			} else {
 				GUI.BeginGroup( EndSequenceRect );
-					GUI.Label( new Rect( 0, 0, EndSequenceWidth, EndSequenceButtonHeight ), "LEVEL FAILED", EndSequenceGUIStyle );
-					GUI.Label( new Rect( 0, EndSequenceButtonHeight, EndSequenceWidth, EndSequenceButtonHeight ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL FAILED", EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
 				
 					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
 						RestartLevel();
