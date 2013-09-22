@@ -44,7 +44,7 @@ public class ExplosionController : MonoBehaviour {
 		}
 		
 		_scale += explosionRate * Time.deltaTime;
-		transform.localScale = new Vector3(_scale, 1, _scale);
+		transform.localScale = new Vector3(_scale, 1f, _scale);
 	}
 	
 	void OnTriggerEnter(Collider collider) {
