@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour {
 	public float PersonalSpace = 2;
 	public float RunAwaySpeed = 10;
 	
+	public AudioClip[] BloodSounds = new AudioClip[0];
 	
 	// Use this for initialization
 	void Start () {
@@ -39,5 +40,16 @@ public class EnemyController : MonoBehaviour {
 		rigidbody.AddForce(distance);
 		
 		//GameObject.Destroy( gameObject );
+	}
+	
+	public void Splatter() {
+		
+		// pick sound to play
+		AudioClip BloodSound = BloodSounds[ Random.Range( 0, BloodSounds.Length ) ];
+		audio.clip = BloodSound;
+		
+		ulong delay = (ulong) Mathf.RoundToInt( (44100 * Random.value) );
+		delay += 22050;
+		audio.Play( delay );
 	}
 }
