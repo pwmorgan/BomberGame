@@ -215,6 +215,7 @@ MonoBehaviour:
   PersonalSpace: 7
   RunAwaySpeed: 15
   animatedPlane: {fileID: 400002}
+  BloodSplatterPrefab: {fileID: 100000, guid: 3c17b6d5243f04d5889c091e03fe85a7, type: 2}
   BloodSounds:
   - {fileID: 8300000, guid: da0e1b63f88604483bbafc9cf0189289, type: 3}
   - {fileID: 8300000, guid: 43f45f5667f0341b8a019664cb468022, type: 3}

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.3430376, y: 3.51894379, z: -2.5084157}
-  m_LocalScale: {x: .5, y: 1, z: .5}
+  m_LocalScale: {x: .200000003, y: 1, z: .200000003}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -81,8 +81,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SplatterMaterials:
   - {fileID: 2100000, guid: 75248a4f919f14c34a53f757c6c59780, type: 2}
-  - {fileID: 2100000, guid: aca462cce240e4670a1a5f9c39f1bd2f, type: 2}
-  - {fileID: 2100000, guid: c61bcfd23ea644cc98d844cdad96b46b, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

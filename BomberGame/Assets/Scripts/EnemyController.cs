@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour {
 	public float RunAwaySpeed = 10;
 	public Transform animatedPlane;
 	
+	public GameObject BloodSplatterPrefab;
+	
 	private AnimationController _sprite;
 	
 	public AudioClip[] BloodSounds = new AudioClip[0];
@@ -73,5 +75,10 @@ public class EnemyController : MonoBehaviour {
 		//ulong delay = (ulong) Mathf.RoundToInt( (44100 * Random.value) );
 		//delay += 22050;
 		audio.Play();
+		
+		// show blood
+		Quaternion BloodRotation = transform.rotation;
+		BloodRotation.y = Random.Range( 0, 360 );
+		Instantiate( BloodSplatterPrefab, transform.position, BloodRotation );
 	}
 }
