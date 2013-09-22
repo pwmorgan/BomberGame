@@ -8,26 +8,26 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
   - enabled: 1
-    path: Assets/Scenes/patrick_level1.unity
+    path: Assets/Scenes/level1.unity
   - enabled: 1
-    path: Assets/Scenes/patrick_level2.unity
+    path: Assets/Scenes/level3.unity
   - enabled: 1
-    path: Assets/Scenes/patrick_level3.unity
+    path: Assets/Scenes/level8.unity
   - enabled: 1
-    path: Assets/Scenes/patrick_level4.unity
+    path: Assets/Scenes/level7.unity
   - enabled: 1
-    path: Assets/Scenes/patrick_level5.unity
+    path: Assets/Scenes/level6.unity
   - enabled: 1
-    path: Assets/Scenes/patrick_level6.unity
+    path: Assets/Scenes/level9.unity
   - enabled: 1
     path: Assets/Scenes/patrick_level7.unity
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/level2.unity
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/level10.unity
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/Scenes/DaveLevel3.unity
   - enabled: 1
-    path: Assets/Scenes/Level4.unity
+    path: Assets/Scenes/level4.unity
   - enabled: 1
-    path: Assets/Scenes/Level5.unity
+    path: Assets/Scenes/level5.unity

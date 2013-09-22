@@ -2070,7 +2070,7 @@ MonoBehaviour:
   - Enemy
   LevelDuration: 20
   KillsRequired: 18
-  NextLevelName: Level3
+  NextLevelName: level3
   ScorchMark: {fileID: 100000, guid: 1b1417bc457a444c5968fcb7e8c07666, type: 2}
   BloodSplatter: {fileID: 100000, guid: 3c17b6d5243f04d5889c091e03fe85a7, type: 2}
   RemainingTimeGUIStyle:
@@ -2323,8 +2323,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 597539310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.3261414, y: -1.70069504, z: -12.4763508}
-  m_LocalScale: {x: 1, y: 1, z: 100}
+  m_LocalPosition: {x: 40.2657928, y: -1.70069504, z: -12.4763508}
+  m_LocalScale: {x: 9.41776562, y: 6, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1001 &597750223
@@ -3537,7 +3537,7 @@ Transform:
   m_GameObject: {fileID: 1094237993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .154829979, y: -1.70069504, z: 13.3713818}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 6, z: 5.82281733}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1001 &1097942495
@@ -3642,8 +3642,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1128461204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.6870499, y: -1.70069504, z: -12.4763508}
-  m_LocalScale: {x: 1, y: 1, z: 100}
+  m_LocalPosition: {x: -37.1324615, y: -1.70069504, z: -12.4763508}
+  m_LocalScale: {x: 9.41776562, y: 6, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1129994244
@@ -4197,7 +4197,7 @@ Transform:
   m_GameObject: {fileID: 1203799715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .154829979, y: -1.70069504, z: -28.7311115}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 6, z: 5.82281733}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1259510071
@@ -5779,7 +5779,7 @@ Prefab:
       objectReference: {fileID: 96600774}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: NextLevelName
-      value: Level3
+      value: level3
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: KillsRequired
