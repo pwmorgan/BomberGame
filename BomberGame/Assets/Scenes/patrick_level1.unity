@@ -87,6 +87,7 @@ GameObject:
   - 23: {fileID: 75813033}
   - 114: {fileID: 75813032}
   - 54: {fileID: 75813031}
+  - 82: {fileID: 75813037}
   m_Layer: 0
   m_Name: EnemyFPO
   m_TagString: Enemy
@@ -125,6 +126,9 @@ MonoBehaviour:
   Alive: 1
   PersonalSpace: 7
   RunAwaySpeed: 15
+  BloodSounds:
+  - {fileID: 8300000, guid: da0e1b63f88604483bbafc9cf0189289, type: 3}
+  - {fileID: 8300000, guid: 43f45f5667f0341b8a019664cb468022, type: 3}
 --- !u!23 &75813033
 Renderer:
   m_ObjectHideFlags: 0
@@ -176,6 +180,65 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!82 &75813037
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 284be2114f4e7454e98b2901e59f057b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1301740981}
+  m_GameObject: {fileID: 75813030}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10000
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &96600770
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +345,7 @@ GameObject:
   - 23: {fileID: 234069831}
   - 114: {fileID: 234069830}
   - 54: {fileID: 234069829}
+  - 82: {fileID: 234069835}
   m_Layer: 0
   m_Name: EnemyFPO
   m_TagString: Enemy
@@ -320,6 +384,9 @@ MonoBehaviour:
   Alive: 1
   PersonalSpace: 7
   RunAwaySpeed: 15
+  BloodSounds:
+  - {fileID: 8300000, guid: da0e1b63f88604483bbafc9cf0189289, type: 3}
+  - {fileID: 8300000, guid: 43f45f5667f0341b8a019664cb468022, type: 3}
 --- !u!23 &234069831
 Renderer:
   m_ObjectHideFlags: 0
@@ -371,6 +438,65 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!82 &234069835
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 284be2114f4e7454e98b2901e59f057b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1990066310}
+  m_GameObject: {fileID: 234069828}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10000
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &502550035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,6 +1289,7 @@ GameObject:
   - 23: {fileID: 1568323570}
   - 114: {fileID: 1568323569}
   - 54: {fileID: 1568323574}
+  - 82: {fileID: 1568323575}
   m_Layer: 0
   m_Name: EnemyFPO
   m_TagString: Enemy
@@ -1185,6 +1312,9 @@ MonoBehaviour:
   Alive: 1
   PersonalSpace: 7
   RunAwaySpeed: 15
+  BloodSounds:
+  - {fileID: 8300000, guid: da0e1b63f88604483bbafc9cf0189289, type: 3}
+  - {fileID: 8300000, guid: 43f45f5667f0341b8a019664cb468022, type: 3}
 --- !u!23 &1568323570
 Renderer:
   m_ObjectHideFlags: 0
@@ -1252,6 +1382,65 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!82 &1568323575
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 284be2114f4e7454e98b2901e59f057b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1480426033}
+  m_GameObject: {fileID: 1568323568}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10000
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &1590694947
 Prefab:
   m_ObjectHideFlags: 0
@@ -1619,6 +1808,7 @@ GameObject:
   - 23: {fileID: 1926145437}
   - 114: {fileID: 1926145436}
   - 54: {fileID: 1926145441}
+  - 82: {fileID: 1926145442}
   m_Layer: 0
   m_Name: EnemyFPO
   m_TagString: Enemy
@@ -1641,6 +1831,9 @@ MonoBehaviour:
   Alive: 1
   PersonalSpace: 7
   RunAwaySpeed: 15
+  BloodSounds:
+  - {fileID: 8300000, guid: da0e1b63f88604483bbafc9cf0189289, type: 3}
+  - {fileID: 8300000, guid: 43f45f5667f0341b8a019664cb468022, type: 3}
 --- !u!23 &1926145437
 Renderer:
   m_ObjectHideFlags: 0
@@ -1708,6 +1901,65 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!82 &1926145442
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 284be2114f4e7454e98b2901e59f057b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1183658694}
+  m_GameObject: {fileID: 1926145435}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10000
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1931865294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1721,6 +1973,7 @@ GameObject:
   - 23: {fileID: 1931865297}
   - 114: {fileID: 1931865296}
   - 54: {fileID: 1931865295}
+  - 82: {fileID: 1931865301}
   m_Layer: 0
   m_Name: EnemyFPO
   m_TagString: Enemy
@@ -1759,6 +2012,9 @@ MonoBehaviour:
   Alive: 1
   PersonalSpace: 7
   RunAwaySpeed: 15
+  BloodSounds:
+  - {fileID: 8300000, guid: da0e1b63f88604483bbafc9cf0189289, type: 3}
+  - {fileID: 8300000, guid: 43f45f5667f0341b8a019664cb468022, type: 3}
 --- !u!23 &1931865297
 Renderer:
   m_ObjectHideFlags: 0
@@ -1810,6 +2066,65 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!82 &1931865301
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 284be2114f4e7454e98b2901e59f057b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1198385028}
+  m_GameObject: {fileID: 1931865294}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10000
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &1990066310
 Prefab:
   m_ObjectHideFlags: 0
@@ -1867,6 +2182,7 @@ GameObject:
   - 23: {fileID: 2012393501}
   - 114: {fileID: 2012393500}
   - 54: {fileID: 2012393499}
+  - 82: {fileID: 2012393505}
   m_Layer: 0
   m_Name: EnemyFPO
   m_TagString: Enemy
@@ -1905,6 +2221,9 @@ MonoBehaviour:
   Alive: 1
   PersonalSpace: 7
   RunAwaySpeed: 15
+  BloodSounds:
+  - {fileID: 8300000, guid: da0e1b63f88604483bbafc9cf0189289, type: 3}
+  - {fileID: 8300000, guid: 43f45f5667f0341b8a019664cb468022, type: 3}
 --- !u!23 &2012393501
 Renderer:
   m_ObjectHideFlags: 0
@@ -1956,3 +2275,62 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!82 &2012393505
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 284be2114f4e7454e98b2901e59f057b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1590694947}
+  m_GameObject: {fileID: 2012393498}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10000
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
