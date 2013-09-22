@@ -19,7 +19,7 @@ EditorBuildSettings:
     path: Assets/Scenes/patrick_level5.unity
   - enabled: 1
     path: Assets/Scenes/patrick_level6.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/patrick_level7.unity
   - enabled: 1
     path: Assets/Scenes/Level2.unity
