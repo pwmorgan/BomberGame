@@ -331,6 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
+  PersonalSpace: 5
 --- !u!54 &513466480
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -699,6 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
+  PersonalSpace: 5
 --- !u!54 &1429908207
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -799,6 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
+  PersonalSpace: 5
 --- !u!54 &1509653343
 Rigidbody:
   m_ObjectHideFlags: 0

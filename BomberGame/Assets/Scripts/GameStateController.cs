@@ -15,6 +15,7 @@ public class GameStateController : MonoBehaviour {
 	private GameObject[] Enemies = new GameObject[0];
 	
 	// Slow Motion Time tracking
+	private float CurrentTimeScale;
 	private float SlowTimeStart;
 	private float SlowTimeDuration;
 	private float SlowTimeElapsed = 0.0f;
@@ -27,6 +28,7 @@ public class GameStateController : MonoBehaviour {
 	private float RemainingTimeWidth = 100.0f;
 	private float RemainingTimeHeight = 50.0f;
 	private string DisplayTime;
+	private bool IsRemainingTimeDisplayed = true;
 	
 	// End of Level tracking
 	private bool IsLevelActive = true;
@@ -35,6 +37,9 @@ public class GameStateController : MonoBehaviour {
 	private float EndSequenceHeight = 300.0f;
 	private float EndSequenceSpacer = 10.0f;
 	private float EndSequenceButtonHeight = 25.0f;
+	
+	// Score tracking
+	private int TotalKills = 0;
 	
 	
 	// Use this for initialization
@@ -55,46 +60,52 @@ public class GameStateController : MonoBehaviour {
 	void Update () {
 		
 		// Mouse click, for debuggin only
-		
+		/*
 		if (Input.GetMouseButtonDown(0)) {
 			CameraController CCScript = LevelCamera.GetComponent<CameraController>();
 			CCScript.Shake();
 		}
+		*/
 		
 		// is time slowed down?
 		// this is for bullet time duration
 		if (IsTimeSlowed) {
 			SlowTimeElapsed = Time.time - SlowTimeStart;
 			
-			Debug.Log( "SlowTimeElapsed: " + SlowTimeElapsed );
+			//Debug.Log( "SlowTimeElapsed: " + SlowTimeElapsed );
 			if (SlowTimeElapsed >= SlowTimeDuration) {
 				ResumeTime();
 			}
 		}
 		
-		// update remaining time
-		if (RemainingTime >= 0) {
-			RemainingTime = LevelDuration - ( Time.time - LevelStartTime );
-			DisplayTime = "" + Mathf.Round(RemainingTime);
-		} else {
-			// end the level
-			TimeExpired();
+		// update remaining time, if it's being displayed
+		if (IsRemainingTimeDisplayed) {
+			if (RemainingTime >= 0) {
+				RemainingTime = LevelDuration - ( Time.time - LevelStartTime );
+				DisplayTime = "" + Mathf.Round(RemainingTime);
+			} else {
+				if (IsLevelActive) {
+					// end the level
+					TimeExpired();
+				}
+			}
 		}
-		
 	}
 	
 	
 	// draw gui
 	void OnGUI() {
 		
-		if ( IsLevelActive ) {
+		if ( IsRemainingTimeDisplayed ) {
 		
 			// draw remaining time
 			GUI.Label( RemainingTimeRect, DisplayTime, RemainingTimeGUIStyle );
 			
-		} else {
+		}
+		
+		if (!IsLevelActive) {
 			GUI.BeginGroup( EndSequenceRect );
-				GUI.Label( new Rect( 0, 0, EndSequenceWidth, EndSequenceButtonHeight ), "LEVEL COMPLETE", EndSequenceGUIStyle );
+				GUI.Label( new Rect( 0, 0, EndSequenceWidth, EndSequenceButtonHeight ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
 			
 				if (GUI.Button( new Rect( 0, EndSequenceButtonHeight + EndSequenceSpacer, EndSequenceWidth, 25 ), "REPLAY" ) ) {
 					RestartLevel();
@@ -111,6 +122,12 @@ public class GameStateController : MonoBehaviour {
 		
 	}
 	
+	public void CancelLevelTimer() {
+		Debug.Log( "CancelLevelTimer" );
+		
+		IsRemainingTimeDisplayed = false;
+	}
+	
 	// Method: CheckEnemies, sees who is alive or dead in the scene
 	public void CheckEnemies() {
 		Debug.Log( "CheckEnemies" );
@@ -123,7 +140,12 @@ public class GameStateController : MonoBehaviour {
 		// see if enemy is dead
 		foreach (GameObject enemy in Enemies) {
 			EnemyController ECScript = enemy.GetComponent<EnemyController>();
+			
+			if ( !ECScript.Alive ) {
+				TotalKills ++;
+			}
 		}
+		Debug.Log( "Total Kills: " + TotalKills );
 		
 	}
 	
@@ -142,6 +164,11 @@ public class GameStateController : MonoBehaviour {
 		
 	}
 	
+	private void OnUpdateSlowTimeTween() {
+		
+		Time.timeScale = CurrentTimeScale;
+	}
+	
 	// Method: ResumeTime, speeds time back up to default
 	private void ResumeTime( ) {
 		Debug.Log( "ResumeTime" );
@@ -157,6 +184,8 @@ public class GameStateController : MonoBehaviour {
 	// Method: TimeExpired, fired when timer reaches 0
 	private void TimeExpired() {
 		Debug.Log( "TimeExpired");
+		
+		CheckEnemies();
 		
 		IsLevelActive = false;
 	}
