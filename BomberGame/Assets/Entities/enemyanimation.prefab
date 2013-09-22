@@ -11,11 +11,10 @@ GameObject:
   - 33: {fileID: 3300000}
   - 64: {fileID: 6400000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
-  - 114: {fileID: 11400008}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: enemyanimation
   m_TagString: Untagged
@@ -84,18 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texture:
-  - {fileID: 2800000, guid: d68c2ad25508843209f7dc4a84264cae, type: 3}
-  - {fileID: 2800000, guid: c0f8d91071e93481aaaea922c248331a, type: 3}
-  - {fileID: 2800000, guid: f7d1950843f794433b2ae9efc7cdba28, type: 3}
-  - {fileID: 2800000, guid: 58b2e510f82784a32a185f14083367b2, type: 3}
-  - {fileID: 2800000, guid: 898fbe9ef162346e0a544f90f788bd58, type: 3}
-  - {fileID: 2800000, guid: 3091d9de367084f139d49dccd86cfcda, type: 3}
-  - {fileID: 2800000, guid: 1cb7efda183244d27a9acf74e95db18f, type: 3}
-  - {fileID: 2800000, guid: bf8e78ab82e1e496dbb04dcb06c52e24, type: 3}
-  - {fileID: 2800000, guid: ebb34e694e116458aa2048bf8a23d589, type: 3}
-  - {fileID: 2800000, guid: 589fcbf2c038c44e98ec7432bb85c919, type: 3}
-  - {fileID: 2800000, guid: 96c6a93b1d35043b78858b55f8a7dc6a, type: 3}
-  - {fileID: 2800000, guid: c16dd2337d71b48869e0a2aaf33259c3, type: 3}
+  - {fileID: 2800000, guid: 079c6c276052e4e1d8873bc7de76df75, type: 3}
   Loop: 1
 --- !u!114 &11400002
 MonoBehaviour:
@@ -108,11 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320f4feab845f4e048b7d1a3ea57ac46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultAnimation: 1
   animations:
-  - {fileID: 11400000}
   - {fileID: 11400004}
   - {fileID: 11400006}
-  - {fileID: 11400008}
+  - {fileID: 11400000}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,18 +113,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texture:
-  - {fileID: 2800000, guid: 3eb78c0f82f134237bbbf92b0d861ea5, type: 3}
-  - {fileID: 2800000, guid: 4f0645126b39a4182af0a8ebb25fbb5a, type: 3}
-  - {fileID: 2800000, guid: 3904a0cbca8864719b3070851fc0a0e5, type: 3}
-  - {fileID: 2800000, guid: 876d142a25c10432e94f280a4f6e1937, type: 3}
-  - {fileID: 2800000, guid: 000f37a414bc441188c7e423e378068c, type: 3}
-  - {fileID: 2800000, guid: 3a965deed680c49b38437fe4e0da9067, type: 3}
-  - {fileID: 2800000, guid: 8e2ad9736fb724eddb1ed772dbf1c55a, type: 3}
-  - {fileID: 2800000, guid: 065c8c83d06234e6aaf452b36c457cc8, type: 3}
-  - {fileID: 2800000, guid: 780e58a72246f470dbcb5a34c027a62b, type: 3}
-  - {fileID: 2800000, guid: f039a993d768841b3ba25b4817c0644e, type: 3}
-  - {fileID: 2800000, guid: d6d124923395a4cb5b7f207256265c04, type: 3}
-  - {fileID: 2800000, guid: 5707fea0489da47bb8a382986d46af7b, type: 3}
+  - {fileID: 2800000, guid: 66147b78531ea44669af45dc309b31c2, type: 3}
+  - {fileID: 2800000, guid: 3885fdea4fe8f4752a22f0d1ddc8b545, type: 3}
+  - {fileID: 2800000, guid: f972ed3dff6214c97b8ea6f0e88d80ae, type: 3}
+  - {fileID: 2800000, guid: 60fd47b09112946f191e0d56b1c8c14e, type: 3}
+  - {fileID: 2800000, guid: e6f72a49c00a54dcabfd1afa3f2f143c, type: 3}
+  - {fileID: 2800000, guid: b6f5eebd382d447d1956eb9947de6b30, type: 3}
+  - {fileID: 2800000, guid: 2136c1429020c470e87712ce51569bd8, type: 3}
+  - {fileID: 2800000, guid: a7c766847d6914d7f99105df6a3db2ad, type: 3}
+  - {fileID: 2800000, guid: c9e42682452194fa0874224dd067c404, type: 3}
+  - {fileID: 2800000, guid: 820d07e9ccbed44da86886e153286274, type: 3}
+  - {fileID: 2800000, guid: 92741041cf389421d982e0bc7ce17254, type: 3}
+  - {fileID: 2800000, guid: c53a4e65d5a364d099506f5f45d8734d, type: 3}
   Loop: 1
 --- !u!114 &11400006
 MonoBehaviour:
@@ -150,44 +138,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texture:
-  - {fileID: 2800000, guid: 8886201c47e9c49d3a2416c41ccb2aa9, type: 3}
-  - {fileID: 2800000, guid: d80f8faf705da4afcba58033da5265cd, type: 3}
-  - {fileID: 2800000, guid: fcb799c37df5b4da492300520d2ab37c, type: 3}
-  - {fileID: 2800000, guid: fe62703755a5d4679b0b9827d041b6c5, type: 3}
-  - {fileID: 2800000, guid: 821e4fccca05e4ffea7101304aeb19e6, type: 3}
-  - {fileID: 2800000, guid: 9cc5db7077f56415482d82fac5a4725d, type: 3}
-  - {fileID: 2800000, guid: 4f02c4d4a9e9142c8afe965a66699421, type: 3}
-  - {fileID: 2800000, guid: c3b15e59db47b4d369a629ea36f45054, type: 3}
-  - {fileID: 2800000, guid: c399c44a588b94bbabec4fe7b8cb6d2a, type: 3}
-  - {fileID: 2800000, guid: ba7dd49d7db044a87be4debd86858680, type: 3}
-  - {fileID: 2800000, guid: ad864efa44a1e452f81329477ba8fc07, type: 3}
-  - {fileID: 2800000, guid: 847d81252ead1425dbbab02e5d598dfc, type: 3}
-  Loop: 1
---- !u!114 &11400008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea7090a2145004da88833ddf68d8307d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  texture:
-  - {fileID: 2800000, guid: 97ec06921738c4ebeb48dfb63aa44972, type: 3}
-  - {fileID: 2800000, guid: 5b2a6f6e5ef584218b792dcd79d1aa34, type: 3}
-  - {fileID: 2800000, guid: 3b18ea26c1bd34b1f8a8fdbae27e0840, type: 3}
-  - {fileID: 2800000, guid: 0d7f0ebe07e9f45ceb85d15f01885c23, type: 3}
-  - {fileID: 2800000, guid: 7601ef204d7984388ab08ee977b35809, type: 3}
-  - {fileID: 2800000, guid: 8d1bd7dbfbcf3460db28c8fab16ff44e, type: 3}
-  - {fileID: 2800000, guid: 1b56ac80b3edc4c8fb93f8910d0b4983, type: 3}
-  - {fileID: 2800000, guid: f74a66154498d40c3aefaedf17b74ce8, type: 3}
-  - {fileID: 2800000, guid: cbea5add41f3e47b59c7b101b2d18e65, type: 3}
-  - {fileID: 2800000, guid: 49feaed95277c4040825dc3bcbb4402f, type: 3}
-  - {fileID: 2800000, guid: 5e48e048406f44533957fc4eb0b55232, type: 3}
-  - {fileID: 2800000, guid: 8ae06df2f2c1c47b78fe036d5b5f1205, type: 3}
-  Loop: 1
+  - {fileID: 2800000, guid: 88177c947647b40a99ddbb3a18d966cb, type: 3}
+  - {fileID: 2800000, guid: f9e829fc975c14b8cb6b3422b431cd47, type: 3}
+  - {fileID: 2800000, guid: 1a0558a00c1d64f31950391165095f64, type: 3}
+  - {fileID: 2800000, guid: 0dc19c54a517e4b63a040bee07cd2e80, type: 3}
+  - {fileID: 2800000, guid: e58feb616e0ae4961929da96f2277371, type: 3}
+  Loop: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

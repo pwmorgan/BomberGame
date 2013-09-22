@@ -3,11 +3,13 @@ using System.Collections;
 
 public class AnimationController : MonoBehaviour {
 	
+	public int defaultAnimation = 0;
 	public SpriteAnimation[] animations;
 	private int _id;
 	
 	// Use this for initialization
 	void Start () {
+		_id = defaultAnimation;
 	}
 	
 	public void SetAnimation(int id) {

@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour {
 						_sprite.SetAnimation(0);
 					
 					} else {
+						_sprite.SetAnimation(4);
 						// Set Idle Animation
 					}
 				}
