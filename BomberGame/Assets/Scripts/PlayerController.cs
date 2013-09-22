@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	
 	void Update () {
+		// TODO: If timer runs out, disable input
+		
 		
 		switch (_state) {
 			case State.ALIVE:
@@ -84,13 +86,8 @@ public class PlayerController : MonoBehaviour {
 				
 				// Create Explosion
 				if (Input.GetButtonDown("Detonate")) {
-					// Create an explosion at player location.
-		            Instantiate(explosion, transform.position, transform.rotation);
-					
-					//_gameController.
-					
-					_state = State.DEAD;
-					Destroy( animatedPlane.gameObject );
+				
+					Explode();
 					
 				}
 			
@@ -106,5 +103,16 @@ public class PlayerController : MonoBehaviour {
 				break;
 			
 		}
+	}
+	
+	public void Explode() {
+	
+		// Create an explosion at player location.
+		Instantiate(explosion, transform.position, transform.rotation);
+					
+		//_gameController.
+		
+		_state = State.DEAD;
+		Destroy( animatedPlane.gameObject );
 	}
 }
