@@ -11,6 +11,7 @@ public class GameStateController : MonoBehaviour {
 	public string NextLevelName = "MainMenu";
 	public GameObject ScorchMark;
 	public GUIStyle RemainingTimeGUIStyle = new GUIStyle();
+	public GUIStyle FloatingBoxGUIStyle = new GUIStyle();
 	public GUIStyle EndSequenceGUIStyle = new GUIStyle();
 	
 	// Entitiies game object arrays
@@ -31,8 +32,8 @@ public class GameStateController : MonoBehaviour {
 	private float RemainingTime;
 	private Rect RemainingTimeRect;
 	private Rect MinKillsRect;
-	private float RemainingTimeWidth = 100.0f;
-	private float RemainingTimeHeight = 50.0f;
+	private float RemainingTimeWidth = 300.0f;
+	private float RemainingTimeHeight = 25.0f;
 	private string DisplayTime;
 	private bool IsRemainingTimeDisplayed = true;
 	
@@ -53,8 +54,9 @@ public class GameStateController : MonoBehaviour {
 		Debug.Log( "GameStateController Initialized-------" );
 		
 		// setup GUI rect's
-		RemainingTimeRect = new Rect( 200, 10, RemainingTimeWidth, RemainingTimeHeight ); 
-		MinKillsRect = new Rect( 20, RemainingTimeHeight + 10, RemainingTimeWidth, RemainingTimeHeight );
+		
+		MinKillsRect = new Rect( Screen.width/2 - (RemainingTimeWidth/2), 10, RemainingTimeWidth, RemainingTimeHeight );
+		RemainingTimeRect = new Rect( Screen.width/2 - (RemainingTimeWidth/2), 12+RemainingTimeHeight, RemainingTimeWidth, RemainingTimeHeight ); 
 		EndSequenceRect = new Rect( Screen.width / 2 - (EndSequenceWidth/2), Screen.height/2 - (EndSequenceHeight/2), EndSequenceWidth, EndSequenceHeight );
 		
 		// assign remaining time
@@ -94,7 +96,7 @@ public class GameStateController : MonoBehaviour {
 		if (IsRemainingTimeDisplayed) {
 			if (RemainingTime >= 0) {
 				RemainingTime = LevelDuration - ( Time.time - LevelStartTime );
-				DisplayTime = "" + Mathf.Round(RemainingTime);
+				DisplayTime = "TIME:" + Mathf.Round(RemainingTime);
 			} else {
 				if (IsLevelActive) {
 					// end the level
@@ -111,6 +113,7 @@ public class GameStateController : MonoBehaviour {
 		if ( IsRemainingTimeDisplayed ) {
 			
 			// draw remaining time
+			//GUI.Box( RemainingTimeRect, "TEST", FloatingBoxGUIStyle );
 			GUI.Label( RemainingTimeRect, DisplayTime, RemainingTimeGUIStyle );
 			
 			// draw kills threshold
