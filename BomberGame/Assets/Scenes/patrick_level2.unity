@@ -756,6 +756,7 @@ MonoBehaviour:
   speed: 13
   explosion: {fileID: 400000, guid: d9ced618a530c449396041ba0c9f938e, type: 2}
   animatedPlane: {fileID: 660714035}
+  ScorchMark: {fileID: 100000, guid: 1b1417bc457a444c5968fcb7e8c07666, type: 2}
 --- !u!1001 &534651102
 Prefab:
   m_ObjectHideFlags: 0
@@ -830,6 +831,7 @@ MonoBehaviour:
   LevelDuration: 20
   KillsRequired: 16
   NextLevelName: patrick_level3
+  ScorchMark: {fileID: 100000, guid: 1b1417bc457a444c5968fcb7e8c07666, type: 2}
   RemainingTimeGUIStyle:
     m_Name: 
     m_Normal:
