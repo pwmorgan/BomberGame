@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	
 	void Update () {
+		// TODO: If timer runs out, disable input
+		
 		
 		switch (_state) {
 			case State.ALIVE:

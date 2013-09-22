@@ -72,6 +72,11 @@ public class GameStateController : MonoBehaviour {
 		}
 		*/
 		
+		
+		if (Input.GetButtonDown("Reset")) {
+			RestartLevel();
+		}
+		
 		// is time slowed down?
 		// this is for bullet time duration
 		if (IsTimeSlowed) {
@@ -277,7 +282,7 @@ public class GameStateController : MonoBehaviour {
 	}
 	
 	// Method: RestartLevel, reloads the current level
-	private void RestartLevel() {
+	public void RestartLevel() {
 		Debug.Log( "RestartLevel" );
 		
 		Application.LoadLevel( Application.loadedLevel );
