@@ -233,7 +233,13 @@ public class GameStateController : MonoBehaviour {
 	private void NextLevel() {
 		Debug.Log( "NextLevel" );
 		
-		Application.LoadLevel( "MainMenu" );
+		if ( NextLevelName == "" ) {
+			Application.LoadLevel( Application.loadedLevel );
+		} else {
+			Application.LoadLevel( NextLevelName );
+		}
+		
+		
 	}
 	
 	// Method: RestartLevel, reloads the current level
