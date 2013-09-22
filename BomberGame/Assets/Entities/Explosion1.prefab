@@ -15,7 +15,7 @@ GameObject:
   - 54: {fileID: 5400000}
   m_Layer: 0
   m_Name: Explosion1
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +87,7 @@ MonoBehaviour:
   maxScale: 20
   timeSlowDuration: .150000006
   timeSlowRate: .25
+  Alive: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

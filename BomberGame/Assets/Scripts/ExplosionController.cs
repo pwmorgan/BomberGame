@@ -30,7 +30,7 @@ public class ExplosionController : MonoBehaviour {
 			Alive = false;
 			
 			// Tell GameController that an explosion died.
-			//_gameController.CheckExplosions();
+			_gameController.CheckExplosions();
 			
 			// Destroy object
 			Destroy(gameObject);

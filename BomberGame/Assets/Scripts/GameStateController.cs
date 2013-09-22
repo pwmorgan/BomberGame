@@ -170,7 +170,8 @@ public class GameStateController : MonoBehaviour {
 		}
 		
 		if (ExplosionsAlive == 0) {
-			IsLevelActive = false;
+			IsLevelActive = false;	
+			CheckEnemies();
 		}
 		
 	}
