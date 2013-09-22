@@ -1425,7 +1425,7 @@ MonoBehaviour:
   EnemyTags:
   - Enemy
   LevelDuration: 20
-  NextLevelName: Level3
+  NextLevelName: Level4
   RemainingTimeGUIStyle:
     m_Name: 
     m_Normal:
@@ -4165,7 +4165,7 @@ Prefab:
       objectReference: {fileID: 96600774}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: NextLevelName
-      value: Level3
+      value: Level4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}

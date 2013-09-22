@@ -7,6 +7,7 @@ public class GameStateController : MonoBehaviour {
 	public Camera LevelCamera;
 	public string[] EnemyTags = new string[1];
 	public int LevelDuration = 30;
+	public int KillsRequired = 0;
 	public string NextLevelName = "MainMenu";
 	public GUIStyle RemainingTimeGUIStyle = new GUIStyle();
 	public GUIStyle EndSequenceGUIStyle = new GUIStyle();
@@ -105,19 +106,38 @@ public class GameStateController : MonoBehaviour {
 		}
 		
 		if (!IsLevelActive) {
-			GUI.BeginGroup( EndSequenceRect );
-				GUI.Label( new Rect( 0, 0, EndSequenceWidth, EndSequenceButtonHeight ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
 			
-				if (GUI.Button( new Rect( 0, EndSequenceButtonHeight + EndSequenceSpacer, EndSequenceWidth, 25 ), "REPLAY" ) ) {
-					RestartLevel();
-				}
-				if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "NEXT LEVEL" ) ) {
-					NextLevel();
-				}
-				if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 3, EndSequenceWidth, 25 ), "QUIT GAME" ) ) {
-					QuitToMenu();
-				}
-			GUI.EndGroup();
+			// LEVEL PASSED
+			if (TotalKills >= KillsRequired ) {
+				GUI.BeginGroup( EndSequenceRect );
+					GUI.Label( new Rect( 0, 0, EndSequenceWidth, EndSequenceButtonHeight ), "LEVEL PASSED", EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, EndSequenceButtonHeight, EndSequenceWidth, EndSequenceButtonHeight ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
+				
+					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
+						RestartLevel();
+					}
+					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 3, EndSequenceWidth, 25 ), "NEXT LEVEL" ) ) {
+						NextLevel();
+					}
+					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 4, EndSequenceWidth, 25 ), "QUIT GAME" ) ) {
+						QuitToMenu();
+					}
+				GUI.EndGroup();
+				
+			// LEVEL FAILED
+			} else {
+				GUI.BeginGroup( EndSequenceRect );
+					GUI.Label( new Rect( 0, 0, EndSequenceWidth, EndSequenceButtonHeight ), "LEVEL FAILED", EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, EndSequenceButtonHeight, EndSequenceWidth, EndSequenceButtonHeight ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
+				
+					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
+						RestartLevel();
+					}
+					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 3, EndSequenceWidth, 25 ), "QUIT GAME" ) ) {
+						QuitToMenu();
+					}
+				GUI.EndGroup();
+			}
 			
 		}
 		
