@@ -1009,7 +1009,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 502550039}
-  - 33: {fileID: 502550038}
   - 114: {fileID: 502550041}
   - 143: {fileID: 502550037}
   m_Layer: 0
@@ -1034,14 +1033,6 @@ CharacterController:
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &502550038
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: 3aa02cdb17f7847ccb4c9c01a068987f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1316605667}
-  m_GameObject: {fileID: 502550035}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &502550039
 Transform:
   m_ObjectHideFlags: 0
@@ -1142,7 +1133,7 @@ MonoBehaviour:
   EnemyTags:
   - Enemy
   LevelDuration: 20
-  KillsRequired: 0
+  KillsRequired: 22
   NextLevelName: Level2
   ScorchMark: {fileID: 100000, guid: 1b1417bc457a444c5968fcb7e8c07666, type: 2}
   RemainingTimeGUIStyle:
@@ -3179,6 +3170,10 @@ Prefab:
       propertyPath: NextLevelName
       value: Level2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
+      propertyPath: KillsRequired
+      value: 22
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
   m_RootGameObject: {fileID: 576913499}
@@ -3703,7 +3698,7 @@ Transform:
   m_GameObject: {fileID: 1977641127}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
   m_LocalPosition: {x: .065196991, y: .794363022, z: -.167402267}
-  m_LocalScale: {x: .600000024, y: .828438759, z: .600000024}
+  m_LocalScale: {x: .400000006, y: .828438759, z: .400000006}
   m_Children: []
   m_Father: {fileID: 502550039}
 --- !u!114 &1977641129
