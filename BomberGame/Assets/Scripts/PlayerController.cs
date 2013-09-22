@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour {
 	
 	public int speed;
 	public Transform explosion;
+	public Transform animatedPlane;
 	
 	private enum State {
 		ALIVE,
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 	private CharacterController _controller;
 	private GameStateController _gameController;
 	private State _state;
+	private AnimationController _sprite;
 	
 	
 	// Use this for initialization
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 		
 		_gameController = gameControllerObj.GetComponent(typeof(GameStateController)) as GameStateController;
 		_state = State.ALIVE;
+		_sprite = animatedPlane.GetComponent(typeof(AnimationController)) as AnimationController;
 	}
 	
 	// Update is called once per frame
@@ -37,10 +40,44 @@ public class PlayerController : MonoBehaviour {
 				
 				// Horizontal Movement
 				_velocity.x = xVel * speed * Time.fixedDeltaTime;
-				
+			
 				// Vertical Movement
 				_velocity.z = yVel * speed * Time.fixedDeltaTime;
 				
+			
+			
+				// Z is up, X is right
+				// Up Left Right Down
+				if (_velocity.x > 0) {
+					if (_velocity.z > _velocity.x) {
+						// Set to Up Anim
+						_sprite.SetAnimation(0);
+					} else {
+						// Set to Right Anim
+						_sprite.SetAnimation(2);
+					}
+				} else if (_velocity.x < 0){	
+					if (_velocity.z < _velocity.x) {
+						// Set to Down Anim
+						_sprite.SetAnimation(3);
+					} else {
+						// Set to Left Anim
+						_sprite.SetAnimation(1);
+					}
+				} else {
+					if (_velocity.z < 0) {
+						// Set to Down Anim
+						_sprite.SetAnimation(3);
+					
+					} else if (_velocity.z > 0) {
+						// Set to Up Anim
+						_sprite.SetAnimation(0);
+					
+					} else {
+						// Set Idle Animation
+					}
+				}
+			
 				// Update position
 				_controller.Move(_velocity);
 				
