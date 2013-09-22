@@ -860,7 +860,7 @@ MonoBehaviour:
   - Enemy
   LevelDuration: 22
   KillsRequired: 9
-  NextLevelName: MainMenu
+  NextLevelName: Level1
   ScorchMark: {fileID: 100000, guid: 1b1417bc457a444c5968fcb7e8c07666, type: 2}
   RemainingTimeGUIStyle:
     m_Name: 
@@ -2413,7 +2413,7 @@ Prefab:
       objectReference: {fileID: 96600774}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: NextLevelName
-      value: MainMenu
+      value: Level1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: KillsRequired
