@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour {
 		switch (_state) {
 			case State.ALIVE:
 				// Get input
+
 				float xVel = Input.GetAxis("Horizontal");
 				float yVel = Input.GetAxis("Vertical");
 				
@@ -90,7 +91,6 @@ public class PlayerController : MonoBehaviour {
 				
 					_gameController.CancelLevelTimer();
 					Explode();
-					
 					
 				}
 			
