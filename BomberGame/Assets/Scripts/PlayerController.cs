@@ -12,12 +12,16 @@ public class PlayerController : MonoBehaviour {
 	}
 	private Vector3 _velocity;
 	private CharacterController _controller;
+	private GameStateController _gameController;
 	private State _state;
 	
 	
 	// Use this for initialization
 	void Start () {
 		_controller = GetComponent<CharacterController>();
+		GameObject gameControllerObj = GameObject.FindGameObjectsWithTag( "GameController" )[0];
+		
+		_gameController = gameControllerObj.GetComponent(typeof(GameStateController)) as GameStateController;
 		_state = State.ALIVE;
 	}
 	
@@ -44,6 +48,7 @@ public class PlayerController : MonoBehaviour {
 				if (Input.GetButtonDown("Detonate")) {
 					// Create an explosion at player location.
 		            Instantiate(explosion, transform.position, transform.rotation);
+					_gameController.SlowTime(0.2f, 0.2f);
 					_state = State.DEAD;
 				}
 			

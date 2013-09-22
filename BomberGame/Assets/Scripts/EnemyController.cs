@@ -5,6 +5,7 @@ public class EnemyController : MonoBehaviour {
 	
 	//
 	public bool Alive = true;
+	public float PersonalSpace = 2;
 	
 	
 	// Use this for initialization
@@ -14,7 +15,16 @@ public class EnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
+		GameObject player = GameObject.FindGameObjectsWithTag( "Player" )[0];
+		float distance = Vector3.Distance(player.transform.position, transform.position);
+		
+		if (distance < PersonalSpace) {
+			Debug.Log("Invaded personal space!");
+			Vector3 runAway = transform.position - player.transform.position;
+			runAway *= 10;
+			rigidbody.AddForce(runAway);
+		}
 	}
 	
 	// Kill the enemy
