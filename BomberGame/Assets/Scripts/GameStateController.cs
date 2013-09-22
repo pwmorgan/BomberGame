@@ -122,7 +122,7 @@ public class GameStateController : MonoBehaviour {
 				if (TotalKills >= KillsRequired ) {
 					GUI.BeginGroup( EndSequenceRect );
 						GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL PASSED!", EndSequenceGUIStyle );
-						GUI.Label( new Rect( 0, 32, EndSequenceWidth, 30 ), "KILLS: " + TotalKills + " / " + KillsRequired, EndSequenceGUIStyle );
+						GUI.Label( new Rect( 0, 32, EndSequenceWidth, 30 ), "KILLS: " + TotalKills, EndSequenceGUIStyle );
 					
 						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + (EndSequenceSpacer*2) ), EndSequenceWidth, EndSequenceButtonHeight ), "REPLAY", EndSequenceButtonStyle ) ) {
 							RestartLevel();
