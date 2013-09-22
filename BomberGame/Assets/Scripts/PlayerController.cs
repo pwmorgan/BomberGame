@@ -107,12 +107,14 @@ public class PlayerController : MonoBehaviour {
 	
 	public void Explode() {
 	
-		// Create an explosion at player location.
-		Instantiate(explosion, transform.position, transform.rotation);
-					
-		//_gameController.
-		
-		_state = State.DEAD;
-		Destroy( animatedPlane.gameObject );
+		if (_state == State.ALIVE) {
+			// Create an explosion at player location.
+			Instantiate(explosion, transform.position, transform.rotation);
+						
+			//_gameController.
+			
+			_state = State.DEAD;
+			Destroy( animatedPlane.gameObject );
+		}
 	}
 }
