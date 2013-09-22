@@ -1038,7 +1038,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: LevelDuration
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: LevelCamera
@@ -1059,7 +1059,7 @@ Prefab:
         type: 2}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: RemainingTimeGUIStyle.m_FontSize
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: RemainingTimeGUIStyle.m_Alignment
@@ -1551,7 +1551,7 @@ MonoBehaviour:
   LevelCamera: {fileID: 96600774}
   EnemyTags:
   - Enemy
-  LevelDuration: 20
+  LevelDuration: 3
   KillsRequired: 18
   NextLevelName: Level2
   ScorchMark: {fileID: 100000, guid: 1b1417bc457a444c5968fcb7e8c07666, type: 2}
@@ -1602,7 +1602,7 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 0}
-    m_FontSize: 18
+    m_FontSize: 16
     m_FontStyle: 0
     m_Alignment: 0
     m_WordWrap: 0

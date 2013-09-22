@@ -53,8 +53,8 @@ public class GameStateController : MonoBehaviour {
 		Debug.Log( "GameStateController Initialized-------" );
 		
 		// setup GUI rect's
-		RemainingTimeRect = new Rect( 5, 10, RemainingTimeWidth, RemainingTimeHeight ); 
-		MinKillsRect = new Rect( 5, RemainingTimeHeight + 10, RemainingTimeWidth, RemainingTimeHeight );
+		RemainingTimeRect = new Rect( 200, 10, RemainingTimeWidth, RemainingTimeHeight ); 
+		MinKillsRect = new Rect( 20, RemainingTimeHeight + 10, RemainingTimeWidth, RemainingTimeHeight );
 		EndSequenceRect = new Rect( Screen.width / 2 - (EndSequenceWidth/2), Screen.height/2 - (EndSequenceHeight/2), EndSequenceWidth, EndSequenceHeight );
 		
 		// assign remaining time
@@ -262,12 +262,12 @@ public class GameStateController : MonoBehaviour {
 	private void TimeExpired() {
 		Debug.Log( "TimeExpired");
 		
-		IsLevelActive = false;
+		//IsLevelActive = false;
 		
 		// Explode the player
 		GameObject Player = GameObject.FindGameObjectWithTag( "Player" );
 		PlayerController PCScript = Player.GetComponent<PlayerController>();
-		
+		PCScript.Explode();
 		
 	}
 	
