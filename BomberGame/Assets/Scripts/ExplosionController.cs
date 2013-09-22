@@ -9,25 +9,28 @@ public class ExplosionController : MonoBehaviour {
 	public float timeSlowDuration;
 	public float timeSlowRate;
 	
+	private GameStateController _gameController;
+	
 	private float _scale = 1;
 	
 	// Use this for initialization
 	void Start () {
 		GameObject gameControllerObj = GameObject.FindGameObjectsWithTag( "GameController" )[0];
-		GameStateController gameController = gameControllerObj.GetComponent(typeof(GameStateController)) as GameStateController;
-		gameController.SlowTime(timeSlowDuration, timeSlowRate);
-		CameraController camera = gameController.LevelCamera.GetComponent(typeof(CameraController)) as CameraController;
+		_gameController = gameControllerObj.GetComponent(typeof(GameStateController)) as GameStateController;
+		_gameController.SlowTime(timeSlowDuration, timeSlowRate);
+		CameraController camera = _gameController.LevelCamera.GetComponent(typeof(CameraController)) as CameraController;
 		camera.Shake();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		_scale += explosionRate * Time.deltaTime;
-		transform.localScale = new Vector3(_scale, _scale, _scale);
-		
 		if (_scale > maxScale) {
+			// Tell GameController that an explosion died.
 			Destroy(gameObject);
 		}
+		
+		_scale += explosionRate * Time.deltaTime;
+		transform.localScale = new Vector3(_scale, _scale, _scale);
 	}
 	
 	void OnTriggerEnter(Collider collider) {
