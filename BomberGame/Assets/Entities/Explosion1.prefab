@@ -85,6 +85,8 @@ MonoBehaviour:
   explosionForce: 250
   explosionRate: 75
   maxScale: 20
+  timeSlowDuration: .150000006
+  timeSlowRate: .25
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

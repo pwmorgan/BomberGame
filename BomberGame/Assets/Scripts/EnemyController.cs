@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour {
 	//
 	public bool Alive = true;
 	public float PersonalSpace = 2;
+	public float RunAwaySpeed = 10;
 	
 	
 	// Use this for initialization
@@ -20,9 +21,8 @@ public class EnemyController : MonoBehaviour {
 		float distance = Vector3.Distance(player.transform.position, transform.position);
 		
 		if (distance < PersonalSpace) {
-			Debug.Log("Invaded personal space!");
 			Vector3 runAway = transform.position - player.transform.position;
-			runAway *= 10;
+			runAway *= RunAwaySpeed;
 			rigidbody.AddForce(runAway);
 		}
 	}

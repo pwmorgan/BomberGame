@@ -31,7 +31,6 @@ public class ExplosionController : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider collider) {
-		Debug.Log("Collision!");
 		if (collider.gameObject.tag == "Enemy") {
 			EnemyController enemy = collider.gameObject.GetComponent(typeof(EnemyController)) as EnemyController;
 			
