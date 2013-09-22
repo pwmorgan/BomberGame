@@ -8,6 +8,7 @@ public class SpriteAnimation : MonoBehaviour {
 	private int _frame = 0;
 	private float _frameRate = 1f / 24f;
 	private float _timer = 0;
+	private float _loopCount = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class SpriteAnimation : MonoBehaviour {
 	public void Reset() {
 		_frame = 0;
 		_timer = 0;
+		_loopCount = 0;
 	}
 	
 	public void UpdateAnimation () {
@@ -33,13 +35,19 @@ public class SpriteAnimation : MonoBehaviour {
 			_frame++;
 			if (_frame >= texture.Length) {
 				if (Loop) {
+					_loopCount++;
 					_frame = 0;
 				} else {
+					_loopCount = 1;
 					_frame--;
 				}
 			}
 			
 			renderer.material.SetTexture("_MainTex", texture[_frame]);
 		}
+	}
+	
+	public int LoopCount() {
+		return _loopCount;
 	}
 }

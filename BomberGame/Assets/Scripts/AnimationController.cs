@@ -21,4 +21,8 @@ public class AnimationController : MonoBehaviour {
 	void Update () {
 		animations[_id].UpdateAnimation();
 	}
+	
+	public int GetLoopCount() {
+		return animations[_id].LoopCount();
+	}
 }
