@@ -155,18 +155,23 @@ public class GameStateController : MonoBehaviour {
 		
 		// assign time scale
 		// TODO: Tween this value
-		Time.timeScale = min;
+		//Time.timeScale = min;
+		iTween.ValueTo( gameObject, iTween.Hash("from", Time.timeScale, "to", min, "time", 0.25f, "easetype", iTween.EaseType.easeOutCubic, "onupdate", "OnUpdateSlowTimeTween", "oncomplete", "OnSlowTimeComplete" ) );
 		
 		// Track duration
 		SlowTimeStart = Time.time;
 		SlowTimeDuration = dur;
-		IsTimeSlowed = true;
+		//IsTimeSlowed = true;
 		
 	}
 	
-	private void OnUpdateSlowTimeTween() {
+	private void OnUpdateSlowTimeTween( float ts ) {
 		
-		Time.timeScale = CurrentTimeScale;
+		Time.timeScale = ts;
+	}
+	
+	private void OnSlowTimeComplete( ) {
+		IsTimeSlowed = true;
 	}
 	
 	// Method: ResumeTime, speeds time back up to default
