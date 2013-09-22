@@ -4,6 +4,7 @@ using System.Collections;
 public class GameStateController : MonoBehaviour {
 	
 	// inspector properties
+	public Camera LevelCamera;
 	public string[] EnemyTags = new string[1];
 	public int LevelDuration = 30;
 	public string NextLevelName = "MainMenu";
@@ -54,10 +55,11 @@ public class GameStateController : MonoBehaviour {
 	void Update () {
 		
 		// Mouse click, for debuggin only
-		/*
+		
 		if (Input.GetMouseButtonDown(0)) {
-			SlowTime( );	
-		}*/
+			CameraController CCScript = LevelCamera.GetComponent<CameraController>();
+			CCScript.Shake();
+		}
 		
 		// is time slowed down?
 		// this is for bullet time duration
