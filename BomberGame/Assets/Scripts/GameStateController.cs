@@ -125,8 +125,8 @@ public class GameStateController : MonoBehaviour {
 			// LEVEL PASSED
 			if (TotalKills >= KillsRequired ) {
 				GUI.BeginGroup( EndSequenceRect );
-					GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL PASSED", EndSequenceGUIStyle );
-					GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL PASSED!", EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "KILLS: " + TotalKills, EndSequenceGUIStyle );
 				
 					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
 						RestartLevel();
@@ -142,8 +142,8 @@ public class GameStateController : MonoBehaviour {
 			// LEVEL FAILED
 			} else {
 				GUI.BeginGroup( EndSequenceRect );
-					GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL FAILED", EndSequenceGUIStyle );
-					GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "TOTAL KILLS: " + TotalKills, EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL FAILED!", EndSequenceGUIStyle );
+					GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "KILLS: " + TotalKills, EndSequenceGUIStyle );
 				
 					if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
 						RestartLevel();
