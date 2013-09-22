@@ -6,7 +6,7 @@ public class SpriteAnimation : MonoBehaviour {
 	public bool Loop = true;
 	
 	private int _frame = 0;
-	private float _frameRate = 1f / 12f;
+	private float _frameRate = 1f / 24f;
 	private float _timer = 0;
 	
 	// Use this for initialization
