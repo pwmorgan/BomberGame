@@ -10,6 +10,7 @@ public class GameStateController : MonoBehaviour {
 	public int KillsRequired = 0;
 	public string NextLevelName = "MainMenu";
 	public GameObject ScorchMark;
+	public GameObject BloodSplatter;
 	public GUIStyle RemainingTimeGUIStyle = new GUIStyle();
 	public GUIStyle EndSequenceGUIStyle = new GUIStyle();
 	public GUIStyle EndSequenceButtonStyle = new GUIStyle();
