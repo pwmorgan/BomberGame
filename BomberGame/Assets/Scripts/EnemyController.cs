@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour {
 		Vector3 distance = explosionForce * (transform.position - explosion) ;
 		
 		rigidbody.AddForce(distance);
-		
+		Splatter();
 		//GameObject.Destroy( gameObject );
 	}
 	
@@ -48,8 +48,8 @@ public class EnemyController : MonoBehaviour {
 		AudioClip BloodSound = BloodSounds[ Random.Range( 0, BloodSounds.Length ) ];
 		audio.clip = BloodSound;
 		
-		ulong delay = (ulong) Mathf.RoundToInt( (44100 * Random.value) );
-		delay += 22050;
-		audio.Play( delay );
+		//ulong delay = (ulong) Mathf.RoundToInt( (44100 * Random.value) );
+		//delay += 22050;
+		audio.Play();
 	}
 }
