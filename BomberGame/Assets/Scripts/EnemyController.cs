@@ -22,7 +22,8 @@ public class EnemyController : MonoBehaviour {
 		
 		if (distance < PersonalSpace) {
 			Vector3 runAway = transform.position - player.transform.position;
-			runAway *= RunAwaySpeed;
+			runAway.Normalize();
+			runAway *= RunAwaySpeed * (PersonalSpace - distance);
 			rigidbody.AddForce(runAway);
 		}
 	}

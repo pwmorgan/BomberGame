@@ -95,7 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

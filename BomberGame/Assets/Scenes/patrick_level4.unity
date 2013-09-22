@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &2972287
 Renderer:
   m_ObjectHideFlags: 0
@@ -225,8 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &75813033
 Renderer:
   m_ObjectHideFlags: 0
@@ -354,7 +354,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 96600770}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: -10.2847424, y: 34.8622398, z: -20.7138538}
+  m_LocalPosition: {x: 3, y: 34.8622398, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -460,8 +460,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &234069831
 Renderer:
   m_ObjectHideFlags: 0
@@ -576,7 +576,7 @@ Transform:
   m_GameObject: {fileID: 266452534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25.7706223, y: -1.70069504, z: -3.59280586}
-  m_LocalScale: {x: 5.50000143, y: 1, z: 1}
+  m_LocalScale: {x: 5.50000143, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1001 &308091325
@@ -668,8 +668,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &332737375
 Renderer:
   m_ObjectHideFlags: 0
@@ -754,8 +754,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &438683884
 Renderer:
   m_ObjectHideFlags: 0
@@ -1174,7 +1174,7 @@ Transform:
   m_GameObject: {fileID: 597539310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 39.3261414, y: -1.70069504, z: -12.4763508}
-  m_LocalScale: {x: 1, y: 1, z: 100}
+  m_LocalScale: {x: 1, y: 6, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1001 &597750223
@@ -1266,8 +1266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &704200000
 Renderer:
   m_ObjectHideFlags: 0
@@ -1408,8 +1408,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &974655217
 Renderer:
   m_ObjectHideFlags: 0
@@ -1631,7 +1631,7 @@ Transform:
   m_GameObject: {fileID: 1019413188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22.0683517, y: -1.70069504, z: -16.8249645}
-  m_LocalScale: {x: 5.50000143, y: 1, z: 1}
+  m_LocalScale: {x: 5.50000143, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1001 &1087209697
@@ -1777,7 +1777,7 @@ Transform:
   m_GameObject: {fileID: 1094237993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .154829979, y: -1.70069504, z: 13.3713818}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1001 &1097942495
@@ -1883,7 +1883,7 @@ Transform:
   m_GameObject: {fileID: 1128461204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -33.6870499, y: -1.70069504, z: -12.4763508}
-  m_LocalScale: {x: 1, y: 1, z: 100}
+  m_LocalScale: {x: 1, y: 6, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1163696613
@@ -1949,7 +1949,7 @@ Transform:
   m_GameObject: {fileID: 1163696613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.37803936, y: -1.70069504, z: -2.57502174}
-  m_LocalScale: {x: 20, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1177121808
@@ -2015,7 +2015,7 @@ Transform:
   m_GameObject: {fileID: 1177121808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.56540298, y: -1.70069504, z: -16.8249645}
-  m_LocalScale: {x: 12.7187147, y: 1, z: 1}
+  m_LocalScale: {x: 12.7187147, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1001 &1183658694
@@ -2161,7 +2161,7 @@ Transform:
   m_GameObject: {fileID: 1203799715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .154829979, y: -1.70069504, z: -28.7311115}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1001 &1301740981
@@ -2297,8 +2297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &1470777877
 Renderer:
   m_ObjectHideFlags: 0
@@ -2453,7 +2453,7 @@ Transform:
   m_GameObject: {fileID: 1521364131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 32.7259331, y: -1.70069504, z: -16.8249645}
-  m_LocalScale: {x: 13.6812096, y: 1, z: 1}
+  m_LocalScale: {x: 13.6812096, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1568323568
@@ -2489,8 +2489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &1568323570
 Renderer:
   m_ObjectHideFlags: 0
@@ -2687,8 +2687,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &1656570964
 Renderer:
   m_ObjectHideFlags: 0
@@ -2851,8 +2851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &1720178434
 Renderer:
   m_ObjectHideFlags: 0
@@ -3025,8 +3025,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &1776454905
 Renderer:
   m_ObjectHideFlags: 0
@@ -3143,8 +3143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &1854970293
 Renderer:
   m_ObjectHideFlags: 0
@@ -3229,8 +3229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &1926145437
 Renderer:
   m_ObjectHideFlags: 0
@@ -3387,8 +3387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &1931865297
 Renderer:
   m_ObjectHideFlags: 0
@@ -3533,8 +3533,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &2012393501
 Renderer:
   m_ObjectHideFlags: 0
@@ -3635,8 +3635,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &2093860162
 Renderer:
   m_ObjectHideFlags: 0
@@ -3737,8 +3737,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  PersonalSpace: 5
-  RunAwaySpeed: 10
+  PersonalSpace: 7
+  RunAwaySpeed: 15
 --- !u!23 &2115097001
 Renderer:
   m_ObjectHideFlags: 0
@@ -3853,6 +3853,6 @@ Transform:
   m_GameObject: {fileID: 2128598174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -32.4165535, y: -1.70069504, z: -2.57502174}
-  m_LocalScale: {x: 20, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
