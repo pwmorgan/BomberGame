@@ -11,8 +11,9 @@ public class GameStateController : MonoBehaviour {
 	public GUIStyle RemainingTimeGUIStyle = new GUIStyle();
 	public GUIStyle EndSequenceGUIStyle = new GUIStyle();
 	
-	// Enemies game object array
+	// Entitiies game object arrays
 	private GameObject[] Enemies = new GameObject[0];
+	private GameObject[] Explosions = new GameObject[0];
 	
 	// Slow Motion Time tracking
 	private float CurrentTimeScale;
@@ -146,6 +147,31 @@ public class GameStateController : MonoBehaviour {
 			}
 		}
 		Debug.Log( "Total Kills: " + TotalKills );
+		
+	}
+	
+	// Method: CheckExplosions, see is the explosions are finished
+	public void CheckExplosions() {
+		Debug.Log( "CheckExplosions" );
+		
+		int ExplosionsAlive = 0;
+		
+		// identify explosions
+		Explosions = GameObject.FindGameObjectsWithTag( "Explosion" );
+		Debug.Log( "Total Explosions: " + Explosions.Length );
+		
+		// see if explosion is done
+		foreach (GameObject explosion in Explosions) {
+			ExplosionController ECScript = explosion.GetComponent<ExplosionController>();
+			
+			if ( ECScript.Alive ) {
+				ExplosionsAlive ++;
+			}
+		}
+		
+		if (ExplosionsAlive == 0) {
+			IsLevelActive = false;
+		}
 		
 	}
 	
