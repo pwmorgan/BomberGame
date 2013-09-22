@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour {
 				// Create Explosion
 				if (Input.GetButtonDown("Detonate")) {
 				
+					_gameController.CancelLevelTimer();
 					Explode();
 					
 				}
@@ -110,8 +111,6 @@ public class PlayerController : MonoBehaviour {
 		if (_state == State.ALIVE) {
 			// Create an explosion at player location.
 			Instantiate(explosion, transform.position, transform.rotation);
-						
-			//_gameController.
 			
 			_state = State.DEAD;
 			Destroy( animatedPlane.gameObject );
