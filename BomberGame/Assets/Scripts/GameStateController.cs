@@ -9,12 +9,15 @@ public class GameStateController : MonoBehaviour {
 	public int LevelDuration = 30;
 	public int KillsRequired = 0;
 	public string NextLevelName = "MainMenu";
+	public GameObject ScorchMark;
 	public GUIStyle RemainingTimeGUIStyle = new GUIStyle();
 	public GUIStyle EndSequenceGUIStyle = new GUIStyle();
 	
 	// Entitiies game object arrays
 	private GameObject[] Enemies = new GameObject[0];
 	private GameObject[] Explosions = new GameObject[0];
+	
+	private Transform PlayerDeathTransform;
 	
 	// Slow Motion Time tracking
 	private float CurrentTimeScale;
@@ -235,6 +238,13 @@ public class GameStateController : MonoBehaviour {
 		// camera shake
 		CameraController CCScript = LevelCamera.GetComponent<CameraController>();
 		CCScript.Shake();
+		
+		// scorch mark
+		GameObject Player = GameObject.FindGameObjectWithTag( "Player" );
+		PlayerDeathTransform = Player.transform;
+		Instantiate(ScorchMark, PlayerDeathTransform.position, transform.rotation);
+
+		
 	}
 	
 	// Method: TimeExpired, fired when timer reaches 0
