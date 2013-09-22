@@ -8,6 +8,7 @@ public class ExplosionController : MonoBehaviour {
 	public int maxScale;
 	public float timeSlowDuration;
 	public float timeSlowRate;
+	public bool Alive = true;
 	
 	private GameStateController _gameController;
 	
@@ -25,7 +26,13 @@ public class ExplosionController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (_scale > maxScale) {
+			// Set this to die.
+			Alive = false;
+			
 			// Tell GameController that an explosion died.
+			//_gameController.CheckExplosions();
+			
+			// Destroy object
 			Destroy(gameObject);
 		}
 		
