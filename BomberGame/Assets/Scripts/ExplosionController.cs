@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ExplosionController : MonoBehaviour {
 	
+	public Transform explosionPlane;
 	public int explosionForce;
 	public int explosionRate;
 	public int maxScale;
@@ -20,7 +21,13 @@ public class ExplosionController : MonoBehaviour {
 		_gameController = gameControllerObj.GetComponent(typeof(GameStateController)) as GameStateController;
 		_gameController.SlowTime(timeSlowDuration, timeSlowRate);
 		CameraController camera = _gameController.LevelCamera.GetComponent(typeof(CameraController)) as CameraController;
-		//camera.Shake();
+		
+		Quaternion planeRotation = transform.rotation;
+		planeRotation.y = 180;
+		Vector3 planePosition = transform.position;
+		planePosition.z += 3;
+		Instantiate(explosionPlane, planePosition, planeRotation);
+		
 	}
 	
 	// Update is called once per frame
@@ -37,7 +44,7 @@ public class ExplosionController : MonoBehaviour {
 		}
 		
 		_scale += explosionRate * Time.deltaTime;
-		transform.localScale = new Vector3(_scale, _scale, _scale);
+		transform.localScale = new Vector3(_scale, 1, _scale);
 	}
 	
 	void OnTriggerEnter(Collider collider) {
