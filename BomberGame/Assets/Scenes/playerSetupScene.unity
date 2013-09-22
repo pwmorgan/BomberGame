@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &2972287
 Renderer:
   m_ObjectHideFlags: 0
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &75813033
 Renderer:
   m_ObjectHideFlags: 0
@@ -419,6 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &234069831
 Renderer:
   m_ObjectHideFlags: 0
@@ -520,6 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &332737375
 Renderer:
   m_ObjectHideFlags: 0
@@ -605,6 +609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &438683884
 Renderer:
   m_ObjectHideFlags: 0
@@ -1050,6 +1055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &704200000
 Renderer:
   m_ObjectHideFlags: 0
@@ -1191,6 +1197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &974655217
 Renderer:
   m_ObjectHideFlags: 0
@@ -1773,6 +1780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &1568323570
 Renderer:
   m_ObjectHideFlags: 0
@@ -2036,6 +2044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &1656570964
 Renderer:
   m_ObjectHideFlags: 0
@@ -2199,6 +2208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &1720178434
 Renderer:
   m_ObjectHideFlags: 0
@@ -2372,6 +2382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &1776454905
 Renderer:
   m_ObjectHideFlags: 0
@@ -2489,6 +2500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &1854970293
 Renderer:
   m_ObjectHideFlags: 0
@@ -2574,6 +2586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &1926145437
 Renderer:
   m_ObjectHideFlags: 0
@@ -2731,6 +2744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &1931865297
 Renderer:
   m_ObjectHideFlags: 0
@@ -2876,6 +2890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &2012393501
 Renderer:
   m_ObjectHideFlags: 0
@@ -3043,6 +3058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alive: 1
   PersonalSpace: 5
+  RunAwaySpeed: 10
 --- !u!23 &2115097001
 Renderer:
   m_ObjectHideFlags: 0
