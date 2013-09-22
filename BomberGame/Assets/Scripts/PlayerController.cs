@@ -110,7 +110,9 @@ public class PlayerController : MonoBehaviour {
 	
 		if (_state == State.ALIVE) {
 			// Create an explosion at player location.
-			Instantiate(explosion, transform.position, transform.rotation);
+			Quaternion rotation = transform.rotation;
+			rotation.y += 180;
+			Instantiate(explosion, transform.position, rotation);
 			
 			_state = State.DEAD;
 			Destroy( animatedPlane.gameObject );

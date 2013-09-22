@@ -22,11 +22,10 @@ public class ExplosionController : MonoBehaviour {
 		_gameController.SlowTime(timeSlowDuration, timeSlowRate);
 		CameraController camera = _gameController.LevelCamera.GetComponent(typeof(CameraController)) as CameraController;
 		
-		Quaternion planeRotation = transform.rotation;
-		planeRotation.y = 180;
 		Vector3 planePosition = transform.position;
 		planePosition.z += 3;
-		Instantiate(explosionPlane, planePosition, planeRotation);
+		planePosition.y += 1f;
+		Instantiate(explosionPlane, planePosition, transform.rotation);
 		
 	}
 	
