@@ -35,11 +35,16 @@ public class EnemyController : MonoBehaviour {
 		
 			if (rigidbody.velocity.z != 0 || rigidbody.velocity.x != 0) {
 				_sprite.SetAnimation(0);
-				if (rigidbody.velocity.z < 0) {
-					// Don't flip animation;
-				} else if (rigidbody.velocity.z > 0) {
+				
+				Vector3 localScale = animatedPlane.localScale;
+				if (rigidbody.velocity.x < 0) {
 					// Flip animation;
+					localScale.x = -1 *  Mathf.Abs(localScale.x);
+				} else if (rigidbody.velocity.x > 0) {
+					// Unflip animation;
+					localScale.x = Mathf.Abs(localScale.x);
 				}
+				animatedPlane.localScale = localScale;
 			} else {
 				_sprite.SetAnimation(2);
 			}
