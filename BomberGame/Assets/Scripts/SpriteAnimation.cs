@@ -8,7 +8,7 @@ public class SpriteAnimation : MonoBehaviour {
 	private int _frame = 0;
 	private float _frameRate = 1f / 24f;
 	private float _timer = 0;
-	private float _loopCount = 0;
+	private int _loopCount = 0;
 	
 	// Use this for initialization
 	void Start () {
