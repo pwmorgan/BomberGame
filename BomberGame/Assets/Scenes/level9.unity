@@ -446,9 +446,9 @@ MonoBehaviour:
   LevelCamera: {fileID: 96600774}
   EnemyTags:
   - Enemy
-  LevelDuration: 20
+  LevelDuration: 21
   KillsRequired: 6
-  NextLevelName: patrick_level7
+  NextLevelName: level10
   ScorchMark: {fileID: 100000, guid: 1b1417bc457a444c5968fcb7e8c07666, type: 2}
   BloodSplatter: {fileID: 100000, guid: 3c17b6d5243f04d5889c091e03fe85a7, type: 2}
   RemainingTimeGUIStyle:
@@ -2559,7 +2559,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: LevelDuration
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: LevelCamera
@@ -2567,7 +2567,7 @@ Prefab:
       objectReference: {fileID: 96600774}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: NextLevelName
-      value: patrick_level7
+      value: level10
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: KillsRequired

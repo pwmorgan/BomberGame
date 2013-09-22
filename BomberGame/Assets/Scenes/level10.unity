@@ -3648,7 +3648,7 @@ Prefab:
       objectReference: {fileID: 96600774}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: NextLevelName
-      value: Level2
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5b6c2e2f843ab404ca188116d5efa38c, type: 2}
       propertyPath: KillsRequired
@@ -5869,7 +5869,7 @@ MonoBehaviour:
   - Enemy
   LevelDuration: 30
   KillsRequired: 30
-  NextLevelName: Level2
+  NextLevelName: MainMenu
   ScorchMark: {fileID: 100000, guid: 1b1417bc457a444c5968fcb7e8c07666, type: 2}
   BloodSplatter: {fileID: 100000, guid: 3c17b6d5243f04d5889c091e03fe85a7, type: 2}
   RemainingTimeGUIStyle:
