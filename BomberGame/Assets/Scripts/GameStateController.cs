@@ -12,6 +12,7 @@ public class GameStateController : MonoBehaviour {
 	public GameObject ScorchMark;
 	public GUIStyle RemainingTimeGUIStyle = new GUIStyle();
 	public GUIStyle EndSequenceGUIStyle = new GUIStyle();
+	public GUIStyle EndSequenceButtonStyle = new GUIStyle();
 	
 	// Entitiies game object arrays
 	private GameObject[] Enemies = new GameObject[0];
@@ -42,7 +43,7 @@ public class GameStateController : MonoBehaviour {
 	private float EndSequenceWidth = 600.0f;
 	private float EndSequenceHeight = 300.0f;
 	private float EndSequenceSpacer = 10.0f;
-	private float EndSequenceButtonHeight = 25.0f;
+	private float EndSequenceButtonHeight = 55.0f;
 	private float EndSequenceDelay = 2.0f;
 	private float EndSequencePauseDuration = 0.0f;
 	private float EndSequenceStartTime;
@@ -56,7 +57,6 @@ public class GameStateController : MonoBehaviour {
 		Debug.Log( "GameStateController Initialized-------" );
 		
 		// setup GUI rect's
-		
 		MinKillsRect = new Rect( Screen.width/2 - (RemainingTimeWidth/2), 10, RemainingTimeWidth, RemainingTimeHeight );
 		RemainingTimeRect = new Rect( Screen.width/2 - (RemainingTimeWidth/2), 12+RemainingTimeHeight, RemainingTimeWidth, RemainingTimeHeight ); 
 		EndSequenceRect = new Rect( Screen.width / 2 - (EndSequenceWidth/2), Screen.height/2 - (EndSequenceHeight/2), EndSequenceWidth, EndSequenceHeight );
@@ -70,15 +70,7 @@ public class GameStateController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		// Mouse click, for debuggin only
-		/*
-		if (Input.GetMouseButtonDown(0)) {
-			CameraController CCScript = LevelCamera.GetComponent<CameraController>();
-			CCScript.Shake();
-		}
-		*/
-		
-		
+		// 'r' to reset
 		if (Input.GetButtonDown("Reset")) {
 			RestartLevel();
 		}
@@ -130,15 +122,15 @@ public class GameStateController : MonoBehaviour {
 				if (TotalKills >= KillsRequired ) {
 					GUI.BeginGroup( EndSequenceRect );
 						GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL PASSED!", EndSequenceGUIStyle );
-						GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "KILLS: " + TotalKills, EndSequenceGUIStyle );
+						GUI.Label( new Rect( 0, 32, EndSequenceWidth, 30 ), "KILLS: " + TotalKills + " / " + KillsRequired, EndSequenceGUIStyle );
 					
-						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
+						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + (EndSequenceSpacer*2) ), EndSequenceWidth, EndSequenceButtonHeight ), "REPLAY", EndSequenceButtonStyle ) ) {
 							RestartLevel();
 						}
-						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 3, EndSequenceWidth, 25 ), "NEXT LEVEL" ) ) {
+						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + (EndSequenceSpacer*2)) * 2, EndSequenceWidth, EndSequenceButtonHeight ), "NEXT LEVEL", EndSequenceButtonStyle ) ) {
 							NextLevel();
 						}
-						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 4, EndSequenceWidth, 25 ), "QUIT GAME" ) ) {
+						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + (EndSequenceSpacer*2)) * 3, EndSequenceWidth, EndSequenceButtonHeight ), "MAIN MENU", EndSequenceButtonStyle ) ) {
 							QuitToMenu();
 						}
 					GUI.EndGroup();
@@ -147,12 +139,12 @@ public class GameStateController : MonoBehaviour {
 				} else {
 					GUI.BeginGroup( EndSequenceRect );
 						GUI.Label( new Rect( 0, 0, EndSequenceWidth, 30 ), "LEVEL FAILED!", EndSequenceGUIStyle );
-						GUI.Label( new Rect( 0, EndSequenceButtonHeight + 7, EndSequenceWidth, 30 ), "KILLS: " + TotalKills, EndSequenceGUIStyle );
+						GUI.Label( new Rect( 0, 32, EndSequenceWidth, 30 ), "KILLS: " + TotalKills + " / " + KillsRequired, EndSequenceGUIStyle );
 					
-						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 2, EndSequenceWidth, 25 ), "REPLAY" ) ) {
+						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + (EndSequenceSpacer*2)), EndSequenceWidth, EndSequenceButtonHeight ), "REPLAY", EndSequenceButtonStyle ) ) {
 							RestartLevel();
 						}
-						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + EndSequenceSpacer) * 3, EndSequenceWidth, 25 ), "QUIT GAME" ) ) {
+						if (GUI.Button( new Rect( 0, (EndSequenceButtonHeight + (EndSequenceSpacer*2)) * 2, EndSequenceWidth, EndSequenceButtonHeight ), "MAIN MENU", EndSequenceButtonStyle ) ) {
 							QuitToMenu();
 						}
 					GUI.EndGroup();
