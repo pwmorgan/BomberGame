@@ -252,10 +252,14 @@ public class GameStateController : MonoBehaviour {
 		CameraController CCScript = LevelCamera.GetComponent<CameraController>();
 		CCScript.Shake();
 		
-		// scorch mark
-		GameObject Player = GameObject.FindGameObjectWithTag( "Player" );
-		Player.audio.Play();
 		
+		// player ref
+		GameObject Player = GameObject.FindGameObjectWithTag( "Player" );
+		
+		// explosion sfx
+		//Explosion.audio.Play();
+		
+		// scorch mark
 		PlayerDeathTransform = Player.transform;
 		Instantiate(ScorchMark, PlayerDeathTransform.position, transform.rotation);
 

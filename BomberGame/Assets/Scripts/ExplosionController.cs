@@ -10,6 +10,7 @@ public class ExplosionController : MonoBehaviour {
 	public float timeSlowDuration;
 	public float timeSlowRate;
 	public bool Alive = true;
+	public GameObject ExplosionAudio;
 	
 	private GameStateController _gameController;
 	
@@ -27,6 +28,7 @@ public class ExplosionController : MonoBehaviour {
 		planePosition.y += 1f;
 		Instantiate(explosionPlane, planePosition, transform.rotation);
 		
+		
 	}
 	
 	// Update is called once per frame
@@ -40,6 +42,10 @@ public class ExplosionController : MonoBehaviour {
 			
 			// Destroy object
 			Destroy(gameObject);
+			
+			// Audio
+			Vector3 audioPosition = transform.position;
+			Instantiate(ExplosionAudio, audioPosition, transform.rotation);
 		}
 		
 		_scale += explosionRate * Time.deltaTime;
