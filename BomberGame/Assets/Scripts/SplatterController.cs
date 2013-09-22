@@ -7,16 +7,17 @@ public class SplatterController : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		
+		// random rotation
+		//transform.eulerAngles.y = Random.Range( 0, 360 );
+		
+		// random splatter
 		Material splatter = SplatterMaterials[ Random.Range( 0, SplatterMaterials.Length ) ];
 		renderer.material = splatter;
 		
-		Vector3 localScale = transform.localScale;
-		if (Random.value > 0.5f) {
-			localScale.x = -1 * (localScale.x);
-		} else if (rigidbody.velocity.x > 0) {
-			localScale.x = 1 * (localScale.x);
-		}
-		transform.localScale = localScale;
+		// random scale
+		float randomScale = (Random.value*0.2f)+0.1f;
+		transform.localScale = Vector3.one * randomScale;
 		
 	}
 	

@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour {
 	public float PersonalSpace = 2;
 	public float RunAwaySpeed = 10;
 	public Transform animatedPlane;
+	private float BloodSplatterThreshold = 0.6f;
 	
 	public GameObject BloodSplatterPrefab;
 	
@@ -76,9 +77,11 @@ public class EnemyController : MonoBehaviour {
 		//delay += 22050;
 		audio.Play();
 		
-		// show blood
-		Quaternion BloodRotation = transform.rotation;
-		BloodRotation.y = Random.Range( 0, 360 );
-		Instantiate( BloodSplatterPrefab, transform.position, BloodRotation );
+		// show blood.. maybe
+		float seed = Random.value;
+		if (seed < BloodSplatterThreshold ) {
+			Quaternion BloodRotation = transform.rotation;
+			Instantiate( BloodSplatterPrefab, transform.position, BloodRotation );
+		}
 	}
 }
