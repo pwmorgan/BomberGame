@@ -30,6 +30,7 @@ public class GameStateController : MonoBehaviour {
 	private float LevelStartTime;
 	private float RemainingTime;
 	private Rect RemainingTimeRect;
+	private Rect MinKillsRect;
 	private float RemainingTimeWidth = 100.0f;
 	private float RemainingTimeHeight = 50.0f;
 	private string DisplayTime;
@@ -52,7 +53,8 @@ public class GameStateController : MonoBehaviour {
 		Debug.Log( "GameStateController Initialized-------" );
 		
 		// setup GUI rect's
-		RemainingTimeRect = new Rect( Screen.width / 2 - (RemainingTimeWidth/2), 0, RemainingTimeWidth, RemainingTimeHeight ); 
+		RemainingTimeRect = new Rect( 5, 10, RemainingTimeWidth, RemainingTimeHeight ); 
+		MinKillsRect = new Rect( 5, RemainingTimeHeight + 10, RemainingTimeWidth, RemainingTimeHeight );
 		EndSequenceRect = new Rect( Screen.width / 2 - (EndSequenceWidth/2), Screen.height/2 - (EndSequenceHeight/2), EndSequenceWidth, EndSequenceHeight );
 		
 		// assign remaining time
@@ -102,9 +104,12 @@ public class GameStateController : MonoBehaviour {
 	void OnGUI() {
 		
 		if ( IsRemainingTimeDisplayed ) {
-		
+			
 			// draw remaining time
 			GUI.Label( RemainingTimeRect, DisplayTime, RemainingTimeGUIStyle );
+			
+			// draw kills threshold
+			GUI.Label( MinKillsRect, "KILLS NEEDED: " + KillsRequired, RemainingTimeGUIStyle );
 			
 		}
 		
@@ -146,6 +151,7 @@ public class GameStateController : MonoBehaviour {
 		
 	}
 	
+	// Method: CancelLevelTimer, removes the timer from the level
 	public void CancelLevelTimer() {
 		Debug.Log( "CancelLevelTimer" );
 		
@@ -251,9 +257,13 @@ public class GameStateController : MonoBehaviour {
 	private void TimeExpired() {
 		Debug.Log( "TimeExpired");
 		
-		CheckEnemies();
-		
 		IsLevelActive = false;
+		
+		// Explode the player
+		GameObject Player = GameObject.FindGameObjectWithTag( "Player" );
+		PlayerController PCScript = Player.GetComponent<PlayerController>();
+		
+		
 	}
 	
 	// Method: EndLevel, ends the level and provides the user options
